@@ -6,9 +6,6 @@
   <strong>Adaptive Scientific Intelligence for Spacecraft Fire Safety</strong><br>
   NASA Space Apps 2026 · <em>Flame in Freefall</em>
 </p>
-
-**Adaptive Scientific Intelligence for Spacecraft Fire Safety** — NASA Space Apps 2026, *Flame in Freefall*.
-
 A fire-safety decision-support prototype for crewed spacecraft. It retrieves NASA combustion evidence, estimates fire risk
 with a transparent model, has seven specialised agents debate the result, scores how far the answer can be trusted, and
 requires a human to approve every action. Every command is **simulated**.
