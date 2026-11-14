@@ -6,7 +6,6 @@
   <strong>Adaptive Scientific Intelligence for Spacecraft Fire Safety</strong><br>
   NASA Space Apps 2026 · <em>Flame in Freefall</em>
 </p>
-# FIREGUARD-X
 
 **Adaptive Scientific Intelligence for Spacecraft Fire Safety** — NASA Space Apps 2026, *Flame in Freefall*.
 
