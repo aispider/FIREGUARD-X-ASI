@@ -1,0 +1,31 @@
+from app.models.tables import (
+    AgentRun,
+    Approval,
+    AuditLog,
+    Document,
+    EvidenceChunk,
+    Experiment,
+    IngestionJob,
+    Observation,
+    RiskAssessment,
+    Role,
+    Scenario,
+    SecurityEvent,
+    User,
+)
+
+__all__ = [
+    "AgentRun",
+    "Approval",
+    "AuditLog",
+    "Document",
+    "EvidenceChunk",
+    "Experiment",
+    "IngestionJob",
+    "Observation",
+    "RiskAssessment",
+    "Role",
+    "Scenario",
+    "SecurityEvent",
+    "User",
+]
