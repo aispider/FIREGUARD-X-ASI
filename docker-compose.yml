@@ -1,0 +1,110 @@
+name: fireguard-x
+
+# FIREGUARD-X: Adaptive Scientific Intelligence for spacecraft fire safety.
+# Start everything:   cp .env.example .env && docker compose up --build
+# Open the app:       http://localhost:8080   (API docs: http://localhost:8000/docs)
+
+x-backend-env: &backend-env
+  APP_ENV: ${APP_ENV:-development}
+  DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-fireguard}:${POSTGRES_PASSWORD:-fireguard}@db:5432/${POSTGRES_DB:-fireguard}
+  REDIS_URL: redis://redis:6379/0
+  JWT_SECRET: ${JWT_SECRET:-dev-only-change-me-dev-only-change-me}
+  SEED_PASSWORD: ${SEED_PASSWORD:-fireguard-demo}
+  EVIDENCE_MODE: ${EVIDENCE_MODE:-demo}
+  EMBEDDING_PROVIDER: ${EMBEDDING_PROVIDER:-hash}
+  OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+  OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4o-mini}
+  LLM_ENABLED: ${LLM_ENABLED:-false}
+  ENABLE_SECURITY_DEMO: ${ENABLE_SECURITY_DEMO:-true}
+  AUTO_INGEST: ${AUTO_INGEST:-true}
+  NTRS_BASE_URL: ${NTRS_BASE_URL:-https://ntrs.nasa.gov}
+  CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:8080,http://localhost:5173}
+  DATA_DIR: /data
+  HTTP_PROXY: ${HTTP_PROXY:-}
+  HTTPS_PROXY: ${HTTPS_PROXY:-}
+  NO_PROXY: ${NO_PROXY:-db,redis,backend,localhost,127.0.0.1}
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-fireguard}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-fireguard}
+      POSTGRES_DB: ${POSTGRES_DB:-fireguard}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-fireguard} -d ${POSTGRES_DB:-fireguard}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    networks: [internal]
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    # Cache, rate-limit counters and the ingestion job queue. Ephemeral by design.
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    networks: [internal]
+
+  backend:
+    build:
+      context: ./backend
+    restart: unless-stopped
+    environment:
+      <<: *backend-env
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./data:/data
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=4).status==200 else 1)"]
+      interval: 10s
+      timeout: 6s
+      retries: 20
+      start_period: 40s
+    networks: [internal, edge]
+
+  worker:
+    build:
+      context: ./backend
+    restart: unless-stopped
+    command: ["python", "-m", "app.worker"]
+    environment:
+      <<: *backend-env
+    depends_on:
+      backend:
+        condition: service_healthy
+    volumes:
+      - ./data:/data
+    networks: [internal, edge]
+
+  frontend:
+    build:
+      context: ./frontend
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    networks: [edge]
+
+networks:
+  internal:
+    internal: false
+  edge: {}
+
+volumes:
+  pgdata: {}
