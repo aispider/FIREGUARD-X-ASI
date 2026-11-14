@@ -1,0 +1,162 @@
+{
+  "_note": "Captured from a local FIREGUARD-X backend (APP_ENV=development). The database held only SYNTHETIC/DEMO evidence; no official NASA documents were ingested.",
+  "_trimmed": "evidence shortened to 2 items",
+  "request": {
+    "method": "POST",
+    "path": "/api/simulation/run",
+    "body": {
+      "name": null,
+      "oxygen_percent": 20.4,
+      "airflow_cm_s": 3.2,
+      "pressure_kpa": 101.0,
+      "temperature_k": 420.0,
+      "external_heating_kw_m2": 10.0,
+      "material": "PMMA",
+      "fuel_geometry": "thin_sheet",
+      "gravity": "microgravity",
+      "sensor_flags": null
+    }
+  },
+  "response": {
+    "scenario": {
+      "name": null,
+      "oxygen_percent": 20.4,
+      "airflow_cm_s": 3.2,
+      "pressure_kpa": 101.0,
+      "temperature_k": 420.0,
+      "external_heating_kw_m2": 10.0,
+      "material": "PMMA",
+      "fuel_geometry": "thin_sheet",
+      "gravity": "microgravity",
+      "sensor_flags": null
+    },
+    "risk": {
+      "score": 54,
+      "level": "HIGH",
+      "crew_level": "HIGH",
+      "flame_growth": "HIGH",
+      "spread_potential": "HIGH",
+      "extinction_probability": 40,
+      "confidence": 0.0,
+      "drivers": [
+        {
+          "name": "Oxygen level",
+          "contribution": 0.2168,
+          "share": 0.4025
+        },
+        {
+          "name": "Airflow regime",
+          "contribution": 0.1446,
+          "share": 0.2685
+        },
+        {
+          "name": "Temperature",
+          "contribution": 0.092,
+          "share": 0.1708
+        },
+        {
+          "name": "Pressure",
+          "contribution": 0.0469,
+          "share": 0.0871
+        },
+        {
+          "name": "External heating",
+          "contribution": 0.0383,
+          "share": 0.0712
+        }
+      ],
+      "multiplier": 1.15,
+      "nonlinear_airflow": false,
+      "in_envelope": true,
+      "out_of_range": [],
+      "envelope_source": "prototype_assumption"
+    },
+    "evidence": [
+      {
+        "chunk_id": "DEMO-temperature#000",
+        "experiment": "DEMO",
+        "text": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype. Not NASA data. Qualitative statement of a modelling assumption. Higher ambient temperature and external radiant heating bring a solid fuel closer to ignition and speed up flame spread. In the prototype model they contribute less than oxyg",
+        "relevance": 0.454,
+        "variables": [
+          "oxygen",
+          "airflow",
+          "temperature",
+          "heating",
+          "flame spread",
+          "ignition"
+        ],
+        "materials": [],
+        "topic": "flame_spread",
+        "gravity": "unspecified",
+        "page": null,
+        "synthetic": true,
+        "status": "used",
+        "provenance": {
+          "document_id": "DEMO-temperature",
+          "title": "Demo: ambient temperature and external heating",
+          "source": "SYNTHETIC/DEMO",
+          "source_url": null,
+          "ntrs_id": null,
+          "publication_date": null,
+          "sha256": "3f05c63106ad3b6cf998e94d0fb761e364e12b0dda9a6054056905d9b894eccb",
+          "retrieved_at": "2026-10-12T11:09:01.586589Z",
+          "version": "1",
+          "license": "Project-original, demo only",
+          "integrity": "verified"
+        },
+        "flags": []
+      },
+      {
+        "chunk_id": "DEMO-airflow#000",
+        "experiment": "DEMO",
+        "text": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype. Not NASA data. Qualitative statement of a modelling assumption. The prototype treats airflow nonlinearly. At very low ventilation flow, oxygen supply limits a flame, so it spreads slowly or extinguishes. At moderate flow in microgravity t",
+        "relevance": 0.311,
+        "variables": [
+          "oxygen",
+          "airflow",
+          "extinction"
+        ],
+        "materials": [],
+        "topic": "extinction",
+        "gravity": "microgravity",
+        "page": null,
+        "synthetic": true,
+        "status": "used",
+        "provenance": {
+          "document_id": "DEMO-airflow",
+          "title": "Demo: airflow and the opposed-flow regime",
+          "source": "SYNTHETIC/DEMO",
+          "source_url": null,
+          "ntrs_id": null,
+          "publication_date": null,
+          "sha256": "66bfe9f2311c011089e23b3909e63921d3fc9ebfcab67460041b5a7966067503",
+          "retrieved_at": "2026-10-12T11:09:01.570251Z",
+          "version": "1",
+          "license": "Project-original, demo only",
+          "integrity": "verified"
+        },
+        "flags": []
+      }
+    ],
+    "layers": {
+      "nasa_evidence": [],
+      "prototype_assumptions": [
+        "Risk weights: oxygen 0.42, airflow 0.26, temperature 0.20, external heating 0.10, pressure 0.08.",
+        "Airflow response peaks near 13 cm/s (log-gaussian bump). The peak location is an assumption.",
+        "Material, geometry and gravity multipliers are prototype values, not measured ones.",
+        "Risk thresholds 0.25 / 0.45 / 0.70 (MEDIUM / HIGH / CRITICAL) are the FIREGUARD-X policy, not NASA-approved.",
+        "Trust score weights: evidence 20, relevance 20, experiment match 15, consensus 15, adversarial 15, integrity 10, uncertainty 5.",
+        "Tested envelope: O2 15-24 %, flow 0-30 cm/s, 60-110 kPa, up to 500 K, up to 20 kW/m2, microgravity."
+      ],
+      "synthetic_values": [
+        "DEMO-airflow#000",
+        "DEMO-geometry#000",
+        "DEMO-gravity#000",
+        "DEMO-materials#000",
+        "DEMO-pressure#000",
+        "DEMO-temperature#000"
+      ]
+    },
+    "disclaimer": "Prototype model. Simulated analysis only. Not NASA-approved. A human must approve every action."
+  }
+}

@@ -1,0 +1,896 @@
+{
+  "_note": "Captured from a local FIREGUARD-X backend (APP_ENV=development). The database held only SYNTHETIC/DEMO evidence; no official NASA documents were ingested.",
+  "_trimmed": "evidence array shortened to 3 of 8 items, evidence text cut to 300 characters",
+  "request": {
+    "method": "POST",
+    "path": "/api/analysis/run",
+    "body": {
+      "scenario": {
+        "name": null,
+        "oxygen_percent": 24.8,
+        "airflow_cm_s": 5.0,
+        "pressure_kpa": 140.0,
+        "temperature_k": 590.0,
+        "external_heating_kw_m2": 25.0,
+        "material": "Silicone",
+        "fuel_geometry": "cylinder",
+        "gravity": "microgravity",
+        "sensor_flags": null
+      },
+      "persist": false
+    }
+  },
+  "response": {
+    "assessment_id": null,
+    "generated_at": "2026-10-12T11:11:30.185199Z",
+    "scenario": {
+      "name": null,
+      "oxygen_percent": 24.8,
+      "airflow_cm_s": 5.0,
+      "pressure_kpa": 140.0,
+      "temperature_k": 590.0,
+      "external_heating_kw_m2": 25.0,
+      "material": "Silicone",
+      "fuel_geometry": "cylinder",
+      "gravity": "microgravity",
+      "sensor_flags": null
+    },
+    "risk": {
+      "score": 64,
+      "level": "HIGH",
+      "crew_level": "HIGH",
+      "flame_growth": "HIGH",
+      "spread_potential": "HIGH",
+      "extinction_probability": 28,
+      "confidence": 0.65,
+      "drivers": [
+        {
+          "name": "Oxygen level",
+          "contribution": 0.2455,
+          "share": 0.4351
+        },
+        {
+          "name": "Temperature",
+          "contribution": 0.116,
+          "share": 0.2056
+        },
+        {
+          "name": "Airflow regime",
+          "contribution": 0.1095,
+          "share": 0.1941
+        },
+        {
+          "name": "External heating",
+          "contribution": 0.05,
+          "share": 0.0886
+        },
+        {
+          "name": "Pressure",
+          "contribution": 0.0432,
+          "share": 0.0766
+        }
+      ],
+      "multiplier": 0.6,
+      "nonlinear_airflow": true,
+      "in_envelope": false,
+      "out_of_range": [
+        "oxygen",
+        "pressure",
+        "temperature",
+        "external heating"
+      ],
+      "envelope_source": "prototype_assumption"
+    },
+    "trust": {
+      "score": 47,
+      "band": "REJECT",
+      "guardian_status": "REJECTED",
+      "components": [
+        {
+          "key": "evidence_quality",
+          "label": "Evidence quality",
+          "weight": 0.2,
+          "score": 48.1
+        },
+        {
+          "key": "source_relevance",
+          "label": "Source relevance",
+          "weight": 0.2,
+          "score": 38.6
+        },
+        {
+          "key": "experimental_match",
+          "label": "Experimental match",
+          "weight": 0.15,
+          "score": 15.0
+        },
+        {
+          "key": "agent_consensus",
+          "label": "Agent consensus",
+          "weight": 0.15,
+          "score": 82.0
+        },
+        {
+          "key": "adversarial",
+          "label": "Adversarial verification",
+          "weight": 0.15,
+          "score": 25.0
+        },
+        {
+          "key": "data_integrity",
+          "label": "Data integrity",
+          "weight": 0.1,
+          "score": 100.0
+        },
+        {
+          "key": "uncertainty",
+          "label": "Uncertainty",
+          "weight": 0.05,
+          "score": 21.6
+        }
+      ],
+      "gates": [
+        {
+          "key": "nasa_evidence",
+          "label": "NASA evidence found",
+          "status": "demo",
+          "value": "8 chunks, 0 official (SYNTHETIC/DEMO only)"
+        },
+        {
+          "key": "relevance",
+          "label": "Evidence relevant",
+          "status": "fail",
+          "value": "48%"
+        },
+        {
+          "key": "envelope",
+          "label": "Conditions match experiments",
+          "status": "fail",
+          "value": "outside: oxygen, pressure, temperature, external heating"
+        },
+        {
+          "key": "agreement",
+          "label": "Independent agent agreement",
+          "status": "pass",
+          "value": "82%"
+        },
+        {
+          "key": "adversarial",
+          "label": "Adversarial challenge passed",
+          "status": "fail",
+          "value": "3 open"
+        },
+        {
+          "key": "integrity",
+          "label": "Data integrity verified",
+          "status": "pass",
+          "value": "verified"
+        },
+        {
+          "key": "trust",
+          "label": "Trust score at least 85",
+          "status": "fail",
+          "value": "47/100"
+        }
+      ],
+      "all_gates_pass": false,
+      "insufficient_evidence": true,
+      "verdict": "INSUFFICIENT EVIDENCE — HUMAN REVIEW REQUIRED.",
+      "note": "Trust Score is a prototype metric defined by FIREGUARD-X. It is not NASA-approved. The supporting evidence is SYNTHETIC/DEMO."
+    },
+    "evidence": [
+      {
+        "chunk_id": "DEMO-temperature#000",
+        "experiment": "DEMO",
+        "text": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype. Not NASA data. Qualitative statement of a modelling assumption. Higher ambient temperature and external radiant heating bring a solid fuel closer to ignition and speed up flame spread. In the prototype model they contribute less than oxyg",
+        "relevance": 0.519,
+        "variables": [
+          "oxygen",
+          "airflow",
+          "temperature",
+          "heating",
+          "flame spread",
+          "ignition"
+        ],
+        "materials": [],
+        "topic": "flame_spread",
+        "gravity": "unspecified",
+        "page": null,
+        "synthetic": true,
+        "status": "used",
+        "provenance": {
+          "document_id": "DEMO-temperature",
+          "title": "Demo: ambient temperature and external heating",
+          "source": "SYNTHETIC/DEMO",
+          "source_url": null,
+          "ntrs_id": null,
+          "publication_date": null,
+          "sha256": "3f05c63106ad3b6cf998e94d0fb761e364e12b0dda9a6054056905d9b894eccb",
+          "retrieved_at": "2026-10-12T11:09:01.586589Z",
+          "version": "1",
+          "license": "Project-original, demo only",
+          "integrity": "verified"
+        },
+        "flags": []
+      },
+      {
+        "chunk_id": "DEMO-gravity#000",
+        "experiment": "DEMO",
+        "text": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype. Not NASA data. Qualitative statement of a modelling assumption. Without buoyancy in microgravity, flames can behave differently from the same flame on Earth, and flame spread can persist at oxygen levels where it would stop under normal g",
+        "relevance": 0.332,
+        "variables": [
+          "oxygen",
+          "flame spread"
+        ],
+        "materials": [],
+        "topic": "flame_spread",
+        "gravity": "microgravity",
+        "page": null,
+        "synthetic": true,
+        "status": "used",
+        "provenance": {
+          "document_id": "DEMO-gravity",
+          "title": "Demo: gravity level and buoyancy",
+          "source": "SYNTHETIC/DEMO",
+          "source_url": null,
+          "ntrs_id": null,
+          "publication_date": null,
+          "sha256": "22380e01f600a946f392cd2abefad54f3c92c4412a5aab5c18419a4faacaf737",
+          "retrieved_at": "2026-10-12T11:09:01.610720Z",
+          "version": "1",
+          "license": "Project-original, demo only",
+          "integrity": "verified"
+        },
+        "flags": []
+      },
+      {
+        "chunk_id": "DEMO-airflow#000",
+        "experiment": "DEMO",
+        "text": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype. Not NASA data. Qualitative statement of a modelling assumption. The prototype treats airflow nonlinearly. At very low ventilation flow, oxygen supply limits a flame, so it spreads slowly or extinguishes. At moderate flow in microgravity t",
+        "relevance": 0.308,
+        "variables": [
+          "oxygen",
+          "airflow",
+          "extinction"
+        ],
+        "materials": [],
+        "topic": "extinction",
+        "gravity": "microgravity",
+        "page": null,
+        "synthetic": true,
+        "status": "used",
+        "provenance": {
+          "document_id": "DEMO-airflow",
+          "title": "Demo: airflow and the opposed-flow regime",
+          "source": "SYNTHETIC/DEMO",
+          "source_url": null,
+          "ntrs_id": null,
+          "publication_date": null,
+          "sha256": "66bfe9f2311c011089e23b3909e63921d3fc9ebfcab67460041b5a7966067503",
+          "retrieved_at": "2026-10-12T11:09:01.570251Z",
+          "version": "1",
+          "license": "Project-original, demo only",
+          "integrity": "verified"
+        },
+        "flags": []
+      }
+    ],
+    "evidence_summary": {
+      "count": 8,
+      "documents": 8,
+      "official_documents": 0,
+      "synthetic_only": true,
+      "mode": "demo",
+      "coverage": 1.0,
+      "material_covered": true,
+      "excluded": 0
+    },
+    "council": [
+      {
+        "key": "scientist",
+        "code": "SCI",
+        "name": "Combustion scientist",
+        "identity": {
+          "agent_id": "fireguard.scientist",
+          "role": "COMBUSTION_SCIENTIST",
+          "version": "1.0.0",
+          "model": "rule-based-v1",
+          "permissions": [
+            "read:evidence",
+            "read:risk"
+          ],
+          "input_hash": "a9f2ed702f4cba740d7476db142a96851e9ce43390cd472ebbf219b0ee25540a",
+          "output_hash": "d7ebb1a27bc52ffe149e1ee9b4846ef2ea57ca712fdefcc2b79b11ea15cb0cae"
+        },
+        "output": {
+          "agent": "combustion_scientist",
+          "finding": "Conditions rate HIGH for flame growth with oxygen at 24.8 % and airflow at 5 cm/s for Silicone (cylinder, microgravity). Airflow is in a nonlinear regime.",
+          "evidence": [
+            {
+              "source_id": "DEMO-temperature#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.52
+            },
+            {
+              "source_id": "DEMO-gravity#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.33
+            },
+            {
+              "source_id": "DEMO-airflow#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.31
+            }
+          ],
+          "confidence": 0.34,
+          "verdict": "HIGH",
+          "uncertainties": [
+            "Evidence coverage is thin for these conditions. A strong claim is not supported.",
+            "Conditions sit beyond the tested envelope (oxygen, pressure, temperature, external heating). This is extrapolation.",
+            "All supporting evidence is SYNTHETIC/DEMO. It is not NASA data."
+          ],
+          "limitations": [
+            "Prototype scoring model; not NASA-approved.",
+            "Evidence is SYNTHETIC/DEMO, not NASA data."
+          ],
+          "recommendation": null,
+          "payload": {
+            "risk_level": "HIGH",
+            "nonlinear_airflow": true
+          }
+        },
+        "valid": true
+      },
+      {
+        "key": "data",
+        "code": "DAT",
+        "name": "NASA data scientist",
+        "identity": {
+          "agent_id": "fireguard.data",
+          "role": "NASA_DATA",
+          "version": "1.0.0",
+          "model": "rule-based-v1",
+          "permissions": [
+            "read:evidence",
+            "read:risk"
+          ],
+          "input_hash": "a9f2ed702f4cba740d7476db142a96851e9ce43390cd472ebbf219b0ee25540a",
+          "output_hash": "fe87f442e300eaa31dab136562a3e106842e4c97a22ca4d1b4b9dedcdad48994"
+        },
+        "output": {
+          "agent": "nasa_data_scientist",
+          "finding": "Evidence quality 48 % from 8 chunks in 8 documents (0 official, 8 synthetic); coverage 100 %.",
+          "evidence": [
+            {
+              "source_id": "DEMO-temperature#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.52
+            },
+            {
+              "source_id": "DEMO-gravity#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.33
+            },
+            {
+              "source_id": "DEMO-airflow#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.31
+            },
+            {
+              "source_id": "DEMO-pressure#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.3
+            }
+          ],
+          "confidence": 0.48,
+          "verdict": "LIMITED",
+          "uncertainties": [
+            "Evidence coverage is thin for these conditions. A strong claim is not supported.",
+            "Conditions sit beyond the tested envelope (oxygen, pressure, temperature, external heating). This is extrapolation.",
+            "All supporting evidence is SYNTHETIC/DEMO. It is not NASA data."
+          ],
+          "limitations": [
+            "Prototype scoring model; not NASA-approved.",
+            "Coverage is measured by tag, not by reading comprehension.",
+            "Evidence is SYNTHETIC/DEMO, not NASA data."
+          ],
+          "recommendation": null,
+          "payload": {
+            "coverage": 1.0,
+            "official": 0,
+            "synthetic": 8
+          }
+        },
+        "valid": true
+      },
+      {
+        "key": "fire",
+        "code": "FIR",
+        "name": "Fire risk",
+        "identity": {
+          "agent_id": "fireguard.fire",
+          "role": "FIRE_RISK",
+          "version": "1.0.0",
+          "model": "rule-based-v1",
+          "permissions": [
+            "read:evidence",
+            "write:risk"
+          ],
+          "input_hash": "a9f2ed702f4cba740d7476db142a96851e9ce43390cd472ebbf219b0ee25540a",
+          "output_hash": "91647d4809c9e9dc3a1c966557a8ab62336c02056a1e4aed26c1d09a4d372de0"
+        },
+        "output": {
+          "agent": "fire_risk",
+          "finding": "Fire risk HIGH (score 64/100). Top drivers: oxygen level, temperature, airflow regime.",
+          "evidence": [
+            {
+              "source_id": "DEMO-temperature#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.52
+            },
+            {
+              "source_id": "DEMO-gravity#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.33
+            },
+            {
+              "source_id": "DEMO-oxygen#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.25
+            }
+          ],
+          "confidence": 0.64,
+          "verdict": "HIGH",
+          "uncertainties": [
+            "Evidence coverage is thin for these conditions. A strong claim is not supported.",
+            "Conditions sit beyond the tested envelope (oxygen, pressure, temperature, external heating). This is extrapolation.",
+            "All supporting evidence is SYNTHETIC/DEMO. It is not NASA data."
+          ],
+          "limitations": [
+            "Prototype scoring model; not NASA-approved.",
+            "Evidence is SYNTHETIC/DEMO, not NASA data."
+          ],
+          "recommendation": null,
+          "payload": {
+            "risk_level": "HIGH",
+            "risk_score": 64,
+            "drivers": [
+              "oxygen level",
+              "temperature",
+              "airflow regime"
+            ],
+            "spread_potential": "HIGH"
+          }
+        },
+        "valid": true
+      },
+      {
+        "key": "safety",
+        "code": "SAF",
+        "name": "Mission safety",
+        "identity": {
+          "agent_id": "fireguard.safety",
+          "role": "MISSION_SAFETY",
+          "version": "1.0.0",
+          "model": "rule-based-v1",
+          "permissions": [
+            "read:evidence",
+            "write:risk"
+          ],
+          "input_hash": "a9f2ed702f4cba740d7476db142a96851e9ce43390cd472ebbf219b0ee25540a",
+          "output_hash": "4bf8378cd676eb00ffd12121c851d0c2cf35424a5bffdd29e5436dbafeb5108a"
+        },
+        "output": {
+          "agent": "mission_safety",
+          "finding": "Crew risk HIGH. Habitat module at risk.",
+          "evidence": [
+            {
+              "source_id": "DEMO-suppression#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.17
+            }
+          ],
+          "confidence": 0.56,
+          "verdict": "HIGH crew risk",
+          "uncertainties": [
+            "Evidence coverage is thin for these conditions. A strong claim is not supported.",
+            "Conditions sit beyond the tested envelope (oxygen, pressure, temperature, external heating). This is extrapolation.",
+            "All supporting evidence is SYNTHETIC/DEMO. It is not NASA data."
+          ],
+          "limitations": [
+            "Prototype scoring model; not NASA-approved.",
+            "Evidence is SYNTHETIC/DEMO, not NASA data."
+          ],
+          "recommendation": "Isolate and protect crew",
+          "payload": {
+            "crew_risk": "HIGH"
+          }
+        },
+        "valid": true
+      },
+      {
+        "key": "red",
+        "code": "RED",
+        "name": "Adversarial red team",
+        "identity": {
+          "agent_id": "fireguard.red",
+          "role": "RED_TEAM",
+          "version": "1.0.0",
+          "model": "rule-based-v1",
+          "permissions": [
+            "read:evidence",
+            "challenge:risk"
+          ],
+          "input_hash": "a9f2ed702f4cba740d7476db142a96851e9ce43390cd472ebbf219b0ee25540a",
+          "output_hash": "4c1a59dad40f6a1008246aa9c61648eae5a176bf46621f13cb1f77041d97b6fe"
+        },
+        "output": {
+          "agent": "red_team",
+          "finding": "5 challenges raised, 3 unresolved.",
+          "evidence": [
+            {
+              "source_id": "DEMO-temperature#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.52
+            },
+            {
+              "source_id": "DEMO-gravity#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.33
+            }
+          ],
+          "confidence": 0.46,
+          "verdict": "CHALLENGE RAISED",
+          "uncertainties": [
+            "Evidence coverage is thin for these conditions. A strong claim is not supported.",
+            "Conditions sit beyond the tested envelope (oxygen, pressure, temperature, external heating). This is extrapolation.",
+            "All supporting evidence is SYNTHETIC/DEMO. It is not NASA data."
+          ],
+          "limitations": [
+            "Prototype scoring model; not NASA-approved.",
+            "Evidence is SYNTHETIC/DEMO, not NASA data."
+          ],
+          "recommendation": null,
+          "payload": {
+            "challenges": [
+              {
+                "challenge": "Verify the evidence applies to Silicone under microgravity conditions.",
+                "severity": "LOW",
+                "passed": true,
+                "category": "applicability"
+              },
+              {
+                "challenge": "Evidence coverage is thin for these conditions. A strong claim is not supported.",
+                "severity": "MEDIUM",
+                "passed": false,
+                "category": "coverage"
+              },
+              {
+                "challenge": "Airflow effects are nonlinear in this range. Cutting flow abruptly could raise flame growth before it falls.",
+                "severity": "MEDIUM",
+                "passed": true,
+                "category": "nonlinearity"
+              },
+              {
+                "challenge": "Conditions sit beyond the tested envelope (oxygen, pressure, temperature, external heating). This is extrapolation.",
+                "severity": "HIGH",
+                "passed": false,
+                "category": "extrapolation"
+              },
+              {
+                "challenge": "All supporting evidence is SYNTHETIC/DEMO. It is not NASA data.",
+                "severity": "MEDIUM",
+                "passed": false,
+                "category": "provenance"
+              }
+            ]
+          }
+        },
+        "valid": true
+      },
+      {
+        "key": "guardian",
+        "code": "GRD",
+        "name": "Scientific guardian",
+        "identity": {
+          "agent_id": "fireguard.guardian",
+          "role": "GUARDIAN",
+          "version": "1.0.0",
+          "model": "rule-based-v1",
+          "permissions": [
+            "read:evidence",
+            "validate:risk"
+          ],
+          "input_hash": "a9f2ed702f4cba740d7476db142a96851e9ce43390cd472ebbf219b0ee25540a",
+          "output_hash": "abee9dcd2cbb5b54aa5eb2846a8f30694a8593d8f78e5097bdbcef938e805150"
+        },
+        "output": {
+          "agent": "scientific_guardian",
+          "finding": "INSUFFICIENT EVIDENCE — HUMAN REVIEW REQUIRED.",
+          "evidence": [
+            {
+              "source_id": "DEMO-temperature#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.52
+            },
+            {
+              "source_id": "DEMO-gravity#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.33
+            }
+          ],
+          "confidence": 0.47,
+          "verdict": "REJECTED",
+          "uncertainties": [
+            "Evidence relevant",
+            "Conditions match experiments",
+            "Adversarial challenge passed",
+            "Trust score at least 85"
+          ],
+          "limitations": [
+            "Trust Score is a prototype metric defined by FIREGUARD-X. It is not NASA-approved. The supporting evidence is SYNTHETIC/DEMO."
+          ],
+          "recommendation": null,
+          "payload": {
+            "trust_score": 47,
+            "band": "REJECT",
+            "gates": [
+              {
+                "gate": "NASA evidence found",
+                "status": "demo"
+              },
+              {
+                "gate": "Evidence relevant",
+                "status": "fail"
+              },
+              {
+                "gate": "Conditions match experiments",
+                "status": "fail"
+              },
+              {
+                "gate": "Independent agent agreement",
+                "status": "pass"
+              },
+              {
+                "gate": "Adversarial challenge passed",
+                "status": "fail"
+              },
+              {
+                "gate": "Data integrity verified",
+                "status": "pass"
+              },
+              {
+                "gate": "Trust score at least 85",
+                "status": "fail"
+              }
+            ]
+          }
+        },
+        "valid": true
+      },
+      {
+        "key": "commander",
+        "code": "CMD",
+        "name": "Mission commander",
+        "identity": {
+          "agent_id": "fireguard.commander",
+          "role": "COMMANDER",
+          "version": "1.0.0",
+          "model": "rule-based-v1",
+          "permissions": [
+            "read:evidence",
+            "final:risk",
+            "request:command"
+          ],
+          "input_hash": "a9f2ed702f4cba740d7476db142a96851e9ce43390cd472ebbf219b0ee25540a",
+          "output_hash": "0a7dba7db46fa8b5b90d1b95e4fa4283cd25b9ffc4a154fefbb95676c3b7f0b3"
+        },
+        "output": {
+          "agent": "mission_commander",
+          "finding": "INSUFFICIENT EVIDENCE — HUMAN REVIEW REQUIRED.",
+          "evidence": [
+            {
+              "source_id": "DEMO-temperature#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.52
+            },
+            {
+              "source_id": "DEMO-gravity#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.33
+            }
+          ],
+          "confidence": 0.65,
+          "verdict": "HOLD FOR REVIEW",
+          "uncertainties": [
+            "Evidence coverage is thin for these conditions. A strong claim is not supported.",
+            "Conditions sit beyond the tested envelope (oxygen, pressure, temperature, external heating). This is extrapolation.",
+            "All supporting evidence is SYNTHETIC/DEMO. It is not NASA data."
+          ],
+          "limitations": [
+            "Prototype scoring model; not NASA-approved.",
+            "All actions are simulated. A human must approve."
+          ],
+          "recommendation": "Escalate to human review",
+          "payload": {
+            "risk": "HIGH",
+            "human_approval_required": true,
+            "simulated_only": true,
+            "recommended_actions": [
+              "Escalate to human review"
+            ]
+          }
+        },
+        "valid": true
+      }
+    ],
+    "consensus": {
+      "level": "MEDIUM",
+      "agreement": 0.82,
+      "open_challenges": 3
+    },
+    "challenges": [
+      {
+        "challenge": "Verify the evidence applies to Silicone under microgravity conditions.",
+        "severity": "LOW",
+        "passed": true,
+        "category": "applicability"
+      },
+      {
+        "challenge": "Evidence coverage is thin for these conditions. A strong claim is not supported.",
+        "severity": "MEDIUM",
+        "passed": false,
+        "category": "coverage"
+      },
+      {
+        "challenge": "Airflow effects are nonlinear in this range. Cutting flow abruptly could raise flame growth before it falls.",
+        "severity": "MEDIUM",
+        "passed": true,
+        "category": "nonlinearity"
+      },
+      {
+        "challenge": "Conditions sit beyond the tested envelope (oxygen, pressure, temperature, external heating). This is extrapolation.",
+        "severity": "HIGH",
+        "passed": false,
+        "category": "extrapolation"
+      },
+      {
+        "challenge": "All supporting evidence is SYNTHETIC/DEMO. It is not NASA data.",
+        "severity": "MEDIUM",
+        "passed": false,
+        "category": "provenance"
+      }
+    ],
+    "decision": {
+      "level": "HIGH",
+      "actions": [
+        {
+          "title": "Escalate to human review",
+          "detail": "Evidence is insufficient to support a recommendation."
+        }
+      ],
+      "human_approval_required": true,
+      "simulated_only": true,
+      "insufficient_evidence": true,
+      "summary": "INSUFFICIENT EVIDENCE — HUMAN REVIEW REQUIRED."
+    },
+    "chain": [
+      {
+        "key": "recommendation",
+        "label": "AI recommendation",
+        "status": "fail",
+        "value": "insufficient evidence"
+      },
+      {
+        "key": "guardian",
+        "label": "Scientific guardian",
+        "status": "fail",
+        "value": "REJECTED"
+      },
+      {
+        "key": "policy",
+        "label": "Policy engine",
+        "status": "fail",
+        "value": "blocked"
+      },
+      {
+        "key": "human",
+        "label": "Human approval",
+        "status": "wait",
+        "value": "pending"
+      },
+      {
+        "key": "simulator",
+        "label": "Command simulator",
+        "status": "sim",
+        "value": "simulation only"
+      }
+    ],
+    "debate": [
+      {
+        "speaker": "fire",
+        "label": "Fire risk",
+        "text": "I rate this HIGH, score 64 out of 100. The main drivers are oxygen level, temperature, airflow regime.",
+        "citations": [
+          "DEMO-temperature#000",
+          "DEMO-gravity#000"
+        ]
+      },
+      {
+        "speaker": "red",
+        "label": "Red team",
+        "text": "I challenge that. Conditions sit beyond the tested envelope (oxygen, pressure, temperature, external heating). This is extrapolation.",
+        "citations": [
+          "DEMO-temperature#000",
+          "DEMO-gravity#000"
+        ]
+      },
+      {
+        "speaker": "dat",
+        "label": "NASA data scientist",
+        "text": "Evidence quality is 48 percent across the retrieved chunks. Some of it is synthetic demo text.",
+        "citations": [
+          "DEMO-temperature#000",
+          "DEMO-gravity#000"
+        ]
+      },
+      {
+        "speaker": "grd",
+        "label": "Scientific guardian",
+        "text": "Trust score 47, band REJECT. INSUFFICIENT EVIDENCE — HUMAN REVIEW REQUIRED.",
+        "citations": []
+      },
+      {
+        "speaker": "cmdr",
+        "label": "Mission commander",
+        "text": "I will not recommend action on this evidence. A human must review it.",
+        "citations": []
+      },
+      {
+        "speaker": "con",
+        "label": "Consensus",
+        "text": "Open items: 3. Human approval is required for every action.",
+        "citations": []
+      }
+    ],
+    "layers": {
+      "nasa_evidence": [],
+      "prototype_assumptions": [
+        "Risk weights: oxygen 0.42, airflow 0.26, temperature 0.20, external heating 0.10, pressure 0.08.",
+        "Airflow response peaks near 13 cm/s (log-gaussian bump). The peak location is an assumption.",
+        "Material, geometry and gravity multipliers are prototype values, not measured ones.",
+        "Risk thresholds 0.25 / 0.45 / 0.70 (MEDIUM / HIGH / CRITICAL) are the FIREGUARD-X policy, not NASA-approved.",
+        "Trust score weights: evidence 20, relevance 20, experiment match 15, consensus 15, adversarial 15, integrity 10, uncertainty 5.",
+        "Tested envelope: O2 15-24 %, flow 0-30 cm/s, 60-110 kPa, up to 500 K, up to 20 kW/m2, microgravity."
+      ],
+      "synthetic_values": [
+        "DEMO-airflow#000: Demo: airflow and the opposed-flow regime",
+        "DEMO-geometry#000: Demo: fuel geometry and thickness",
+        "DEMO-gravity#000: Demo: gravity level and buoyancy",
+        "DEMO-materials#000: Demo: material classes used in the prototype",
+        "DEMO-oxygen#000: Demo: oxygen concentration and flame spread",
+        "DEMO-pressure#000: Demo: ambient pressure and oxygen partial pressure",
+        "DEMO-suppression#000: Demo: suppression and crew safety",
+        "DEMO-temperature#000: Demo: ambient temperature and external heating"
+      ]
+    },
+    "integrity": {
+      "ok": true,
+      "checked": 9,
+      "quarantined": []
+    },
+    "security_flags": {
+      "injection_detected": false,
+      "quarantined": false,
+      "out_of_envelope": true,
+      "insufficient_evidence": true,
+      "synthetic_only": true
+    },
+    "limitations": [
+      "Prototype model. Simulated analysis only. Not NASA-approved. A human must approve every action.",
+      "The Trust Score is a prototype metric, not NASA-approved.",
+      "All evidence is SYNTHETIC/DEMO; official NASA documents have not been ingested.",
+      "Extrapolating beyond the tested envelope: oxygen, pressure, temperature, external heating."
+    ]
+  }
+}

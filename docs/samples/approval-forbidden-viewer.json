@@ -1,0 +1,15 @@
+{
+  "_note": "Captured from a local FIREGUARD-X backend (APP_ENV=development). The database held only SYNTHETIC/DEMO evidence; no official NASA documents were ingested.",
+  "_trimmed": false,
+  "request": {
+    "method": "POST",
+    "path": "/api/approvals",
+    "as": "viewer"
+  },
+  "response": {
+    "status_code": 403,
+    "body": {
+      "detail": "Missing permission: approval:decide"
+    }
+  }
+}

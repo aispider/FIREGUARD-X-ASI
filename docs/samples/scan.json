@@ -1,0 +1,9 @@
+{
+  "detected": true,
+  "flags": [
+    "override previous instructions",
+    "forces a risk result"
+  ],
+  "clean_text": "[REMOVED:INSTRUCTION] and [REMOVED:INSTRUCTION].",
+  "severity": "HIGH"
+}

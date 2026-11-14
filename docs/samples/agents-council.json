@@ -1,0 +1,568 @@
+{
+  "_note": "Captured from a local FIREGUARD-X backend (APP_ENV=development). The database held only SYNTHETIC/DEMO evidence; no official NASA documents were ingested.",
+  "_trimmed": false,
+  "request": {
+    "method": "POST",
+    "path": "/api/agents/council",
+    "as": "analyst",
+    "body": {
+      "name": null,
+      "oxygen_percent": 20.4,
+      "airflow_cm_s": 3.2,
+      "pressure_kpa": 101.0,
+      "temperature_k": 420.0,
+      "external_heating_kw_m2": 10.0,
+      "material": "PMMA",
+      "fuel_geometry": "thin_sheet",
+      "gravity": "microgravity",
+      "sensor_flags": null
+    }
+  },
+  "response": {
+    "council": [
+      {
+        "key": "scientist",
+        "code": "SCI",
+        "name": "Combustion scientist",
+        "identity": {
+          "agent_id": "fireguard.scientist",
+          "role": "COMBUSTION_SCIENTIST",
+          "version": "1.0.0",
+          "model": "rule-based-v1",
+          "permissions": [
+            "read:evidence",
+            "read:risk"
+          ],
+          "input_hash": "4c94065ccf703404f085b2b4c0c2d3359c5729a386136da3c1b388f0aa38a522",
+          "output_hash": "3e19f2b18c6697fe23d971d484d2bf834b185849a549803a746a331e535aef9a"
+        },
+        "output": {
+          "agent": "combustion_scientist",
+          "finding": "Conditions rate HIGH for flame growth with oxygen at 20.4 % and airflow at 3.2 cm/s for PMMA (thin sheet, microgravity).",
+          "evidence": [
+            {
+              "source_id": "DEMO-temperature#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.45
+            },
+            {
+              "source_id": "DEMO-airflow#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.31
+            },
+            {
+              "source_id": "DEMO-gravity#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.31
+            }
+          ],
+          "confidence": 0.67,
+          "verdict": "HIGH",
+          "uncertainties": [
+            "Evidence coverage is thin for these conditions. A strong claim is not supported.",
+            "All supporting evidence is SYNTHETIC/DEMO. It is not NASA data."
+          ],
+          "limitations": [
+            "Prototype scoring model; not NASA-approved.",
+            "Evidence is SYNTHETIC/DEMO, not NASA data."
+          ],
+          "recommendation": null,
+          "payload": {
+            "risk_level": "HIGH",
+            "nonlinear_airflow": false
+          }
+        },
+        "valid": true
+      },
+      {
+        "key": "data",
+        "code": "DAT",
+        "name": "NASA data scientist",
+        "identity": {
+          "agent_id": "fireguard.data",
+          "role": "NASA_DATA",
+          "version": "1.0.0",
+          "model": "rule-based-v1",
+          "permissions": [
+            "read:evidence",
+            "read:risk"
+          ],
+          "input_hash": "4c94065ccf703404f085b2b4c0c2d3359c5729a386136da3c1b388f0aa38a522",
+          "output_hash": "5afa2176d2f15777f659269b6af3f7ac77d968ee4ee768aff353c5d58fd2cae4"
+        },
+        "output": {
+          "agent": "nasa_data_scientist",
+          "finding": "Evidence quality 75 % from 8 chunks in 8 documents (0 official, 8 synthetic); coverage 100 %.",
+          "evidence": [
+            {
+              "source_id": "DEMO-temperature#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.45
+            },
+            {
+              "source_id": "DEMO-airflow#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.31
+            },
+            {
+              "source_id": "DEMO-gravity#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.31
+            },
+            {
+              "source_id": "DEMO-pressure#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.24
+            }
+          ],
+          "confidence": 0.75,
+          "verdict": "PARTIAL",
+          "uncertainties": [
+            "Evidence coverage is thin for these conditions. A strong claim is not supported.",
+            "All supporting evidence is SYNTHETIC/DEMO. It is not NASA data."
+          ],
+          "limitations": [
+            "Prototype scoring model; not NASA-approved.",
+            "Coverage is measured by tag, not by reading comprehension.",
+            "Evidence is SYNTHETIC/DEMO, not NASA data."
+          ],
+          "recommendation": null,
+          "payload": {
+            "coverage": 1.0,
+            "official": 0,
+            "synthetic": 8
+          }
+        },
+        "valid": true
+      },
+      {
+        "key": "fire",
+        "code": "FIR",
+        "name": "Fire risk",
+        "identity": {
+          "agent_id": "fireguard.fire",
+          "role": "FIRE_RISK",
+          "version": "1.0.0",
+          "model": "rule-based-v1",
+          "permissions": [
+            "read:evidence",
+            "write:risk"
+          ],
+          "input_hash": "4c94065ccf703404f085b2b4c0c2d3359c5729a386136da3c1b388f0aa38a522",
+          "output_hash": "f322a14a8021b649e36f87b1e343425972c79d51ed3e94bcec738512d90f5858"
+        },
+        "output": {
+          "agent": "fire_risk",
+          "finding": "Fire risk HIGH (score 54/100). Top drivers: oxygen level, airflow regime, temperature.",
+          "evidence": [
+            {
+              "source_id": "DEMO-temperature#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.45
+            },
+            {
+              "source_id": "DEMO-gravity#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.31
+            },
+            {
+              "source_id": "DEMO-geometry#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.2
+            }
+          ],
+          "confidence": 0.54,
+          "verdict": "HIGH",
+          "uncertainties": [
+            "Evidence coverage is thin for these conditions. A strong claim is not supported.",
+            "All supporting evidence is SYNTHETIC/DEMO. It is not NASA data."
+          ],
+          "limitations": [
+            "Prototype scoring model; not NASA-approved.",
+            "Evidence is SYNTHETIC/DEMO, not NASA data."
+          ],
+          "recommendation": null,
+          "payload": {
+            "risk_level": "HIGH",
+            "risk_score": 54,
+            "drivers": [
+              "oxygen level",
+              "airflow regime",
+              "temperature"
+            ],
+            "spread_potential": "HIGH"
+          }
+        },
+        "valid": true
+      },
+      {
+        "key": "safety",
+        "code": "SAF",
+        "name": "Mission safety",
+        "identity": {
+          "agent_id": "fireguard.safety",
+          "role": "MISSION_SAFETY",
+          "version": "1.0.0",
+          "model": "rule-based-v1",
+          "permissions": [
+            "read:evidence",
+            "write:risk"
+          ],
+          "input_hash": "4c94065ccf703404f085b2b4c0c2d3359c5729a386136da3c1b388f0aa38a522",
+          "output_hash": "ae5864b17af9c9ed291737b43763da8e9dc2a0ba239795ca891c16e650cd7a6c"
+        },
+        "output": {
+          "agent": "mission_safety",
+          "finding": "Crew risk HIGH. Habitat module at risk.",
+          "evidence": [
+            {
+              "source_id": "DEMO-suppression#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.13
+            }
+          ],
+          "confidence": 0.48,
+          "verdict": "HIGH crew risk",
+          "uncertainties": [
+            "Evidence coverage is thin for these conditions. A strong claim is not supported.",
+            "All supporting evidence is SYNTHETIC/DEMO. It is not NASA data."
+          ],
+          "limitations": [
+            "Prototype scoring model; not NASA-approved.",
+            "Evidence is SYNTHETIC/DEMO, not NASA data."
+          ],
+          "recommendation": "Isolate and protect crew",
+          "payload": {
+            "crew_risk": "HIGH"
+          }
+        },
+        "valid": true
+      },
+      {
+        "key": "red",
+        "code": "RED",
+        "name": "Adversarial red team",
+        "identity": {
+          "agent_id": "fireguard.red",
+          "role": "RED_TEAM",
+          "version": "1.0.0",
+          "model": "rule-based-v1",
+          "permissions": [
+            "read:evidence",
+            "challenge:risk"
+          ],
+          "input_hash": "4c94065ccf703404f085b2b4c0c2d3359c5729a386136da3c1b388f0aa38a522",
+          "output_hash": "bb6e00a1567ce0684f221e0dfff31be0cdcb293ea022ef603a6a2bb2ef363206"
+        },
+        "output": {
+          "agent": "red_team",
+          "finding": "3 challenges raised, 2 unresolved.",
+          "evidence": [
+            {
+              "source_id": "DEMO-temperature#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.45
+            },
+            {
+              "source_id": "DEMO-airflow#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.31
+            }
+          ],
+          "confidence": 0.64,
+          "verdict": "CHALLENGE RAISED",
+          "uncertainties": [
+            "Evidence coverage is thin for these conditions. A strong claim is not supported.",
+            "All supporting evidence is SYNTHETIC/DEMO. It is not NASA data."
+          ],
+          "limitations": [
+            "Prototype scoring model; not NASA-approved.",
+            "Evidence is SYNTHETIC/DEMO, not NASA data."
+          ],
+          "recommendation": null,
+          "payload": {
+            "challenges": [
+              {
+                "challenge": "Verify the evidence applies to PMMA under microgravity conditions.",
+                "severity": "LOW",
+                "passed": true,
+                "category": "applicability"
+              },
+              {
+                "challenge": "Evidence coverage is thin for these conditions. A strong claim is not supported.",
+                "severity": "MEDIUM",
+                "passed": false,
+                "category": "coverage"
+              },
+              {
+                "challenge": "All supporting evidence is SYNTHETIC/DEMO. It is not NASA data.",
+                "severity": "MEDIUM",
+                "passed": false,
+                "category": "provenance"
+              }
+            ]
+          }
+        },
+        "valid": true
+      },
+      {
+        "key": "guardian",
+        "code": "GRD",
+        "name": "Scientific guardian",
+        "identity": {
+          "agent_id": "fireguard.guardian",
+          "role": "GUARDIAN",
+          "version": "1.0.0",
+          "model": "rule-based-v1",
+          "permissions": [
+            "read:evidence",
+            "validate:risk"
+          ],
+          "input_hash": "4c94065ccf703404f085b2b4c0c2d3359c5729a386136da3c1b388f0aa38a522",
+          "output_hash": "5f4d1ca256f262714e838238b7328e73be5ac656638ace405cfa5aee6459ff90"
+        },
+        "output": {
+          "agent": "scientific_guardian",
+          "finding": "REQUIRES REVIEW — a human must examine the open items before acting.",
+          "evidence": [
+            {
+              "source_id": "DEMO-temperature#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.45
+            },
+            {
+              "source_id": "DEMO-airflow#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.31
+            }
+          ],
+          "confidence": 0.74,
+          "verdict": "REQUIRES REVIEW",
+          "uncertainties": [
+            "Adversarial challenge passed",
+            "Trust score at least 85"
+          ],
+          "limitations": [
+            "Trust Score is a prototype metric defined by FIREGUARD-X. It is not NASA-approved. The supporting evidence is SYNTHETIC/DEMO."
+          ],
+          "recommendation": null,
+          "payload": {
+            "trust_score": 74,
+            "band": "REVIEW",
+            "gates": [
+              {
+                "gate": "NASA evidence found",
+                "status": "demo"
+              },
+              {
+                "gate": "Evidence relevant",
+                "status": "pass"
+              },
+              {
+                "gate": "Conditions match experiments",
+                "status": "pass"
+              },
+              {
+                "gate": "Independent agent agreement",
+                "status": "pass"
+              },
+              {
+                "gate": "Adversarial challenge passed",
+                "status": "fail"
+              },
+              {
+                "gate": "Data integrity verified",
+                "status": "pass"
+              },
+              {
+                "gate": "Trust score at least 85",
+                "status": "fail"
+              }
+            ]
+          }
+        },
+        "valid": true
+      },
+      {
+        "key": "commander",
+        "code": "CMD",
+        "name": "Mission commander",
+        "identity": {
+          "agent_id": "fireguard.commander",
+          "role": "COMMANDER",
+          "version": "1.0.0",
+          "model": "rule-based-v1",
+          "permissions": [
+            "read:evidence",
+            "final:risk",
+            "request:command"
+          ],
+          "input_hash": "4c94065ccf703404f085b2b4c0c2d3359c5729a386136da3c1b388f0aa38a522",
+          "output_hash": "882ab6a06e98e1be2d28571efcbf923c5c7da6a53090e5930771dbe22b247689"
+        },
+        "output": {
+          "agent": "mission_commander",
+          "finding": "Holding for human review before any action.",
+          "evidence": [
+            {
+              "source_id": "DEMO-temperature#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.45
+            },
+            {
+              "source_id": "DEMO-airflow#000",
+              "claim": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype",
+              "confidence": 0.31
+            }
+          ],
+          "confidence": 0.81,
+          "verdict": "HOLD FOR REVIEW",
+          "uncertainties": [
+            "Evidence coverage is thin for these conditions. A strong claim is not supported.",
+            "All supporting evidence is SYNTHETIC/DEMO. It is not NASA data."
+          ],
+          "limitations": [
+            "Prototype scoring model; not NASA-approved.",
+            "All actions are simulated. A human must approve."
+          ],
+          "recommendation": "Isolate affected module; Reduce airflow; Prepare suppression; Continue monitoring; Re-evaluate after 30 seconds",
+          "payload": {
+            "risk": "HIGH",
+            "human_approval_required": true,
+            "simulated_only": true,
+            "recommended_actions": [
+              "Isolate affected module",
+              "Reduce airflow",
+              "Prepare suppression",
+              "Continue monitoring",
+              "Re-evaluate after 30 seconds"
+            ]
+          }
+        },
+        "valid": true
+      }
+    ],
+    "consensus": {
+      "level": "HIGH",
+      "agreement": 0.88,
+      "open_challenges": 2
+    },
+    "challenges": [
+      {
+        "challenge": "Verify the evidence applies to PMMA under microgravity conditions.",
+        "severity": "LOW",
+        "passed": true,
+        "category": "applicability"
+      },
+      {
+        "challenge": "Evidence coverage is thin for these conditions. A strong claim is not supported.",
+        "severity": "MEDIUM",
+        "passed": false,
+        "category": "coverage"
+      },
+      {
+        "challenge": "All supporting evidence is SYNTHETIC/DEMO. It is not NASA data.",
+        "severity": "MEDIUM",
+        "passed": false,
+        "category": "provenance"
+      }
+    ],
+    "trust": {
+      "score": 74,
+      "band": "REVIEW",
+      "guardian_status": "REQUIRES REVIEW",
+      "components": [
+        {
+          "key": "evidence_quality",
+          "label": "Evidence quality",
+          "weight": 0.2,
+          "score": 75.0
+        },
+        {
+          "key": "source_relevance",
+          "label": "Source relevance",
+          "weight": 0.2,
+          "score": 35.8
+        },
+        {
+          "key": "experimental_match",
+          "label": "Experimental match",
+          "weight": 0.15,
+          "score": 100.0
+        },
+        {
+          "key": "agent_consensus",
+          "label": "Agent consensus",
+          "weight": 0.15,
+          "score": 88.0
+        },
+        {
+          "key": "adversarial",
+          "label": "Adversarial verification",
+          "weight": 0.15,
+          "score": 62.0
+        },
+        {
+          "key": "data_integrity",
+          "label": "Data integrity",
+          "weight": 0.1,
+          "score": 100.0
+        },
+        {
+          "key": "uncertainty",
+          "label": "Uncertainty",
+          "weight": 0.05,
+          "score": 80.0
+        }
+      ],
+      "gates": [
+        {
+          "key": "nasa_evidence",
+          "label": "NASA evidence found",
+          "status": "demo",
+          "value": "8 chunks, 0 official (SYNTHETIC/DEMO only)"
+        },
+        {
+          "key": "relevance",
+          "label": "Evidence relevant",
+          "status": "pass",
+          "value": "75%"
+        },
+        {
+          "key": "envelope",
+          "label": "Conditions match experiments",
+          "status": "pass",
+          "value": "in range"
+        },
+        {
+          "key": "agreement",
+          "label": "Independent agent agreement",
+          "status": "pass",
+          "value": "88%"
+        },
+        {
+          "key": "adversarial",
+          "label": "Adversarial challenge passed",
+          "status": "fail",
+          "value": "2 open"
+        },
+        {
+          "key": "integrity",
+          "label": "Data integrity verified",
+          "status": "pass",
+          "value": "verified"
+        },
+        {
+          "key": "trust",
+          "label": "Trust score at least 85",
+          "status": "fail",
+          "value": "74/100"
+        }
+      ],
+      "all_gates_pass": false,
+      "insufficient_evidence": false,
+      "verdict": "REQUIRES REVIEW — a human must examine the open items before acting.",
+      "note": "Trust Score is a prototype metric defined by FIREGUARD-X. It is not NASA-approved. The supporting evidence is SYNTHETIC/DEMO."
+    }
+  }
+}

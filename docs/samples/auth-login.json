@@ -1,0 +1,32 @@
+{
+  "_note": "Captured from a local FIREGUARD-X backend (APP_ENV=development). The database held only SYNTHETIC/DEMO evidence; no official NASA documents were ingested.",
+  "_trimmed": false,
+  "request": {
+    "method": "POST",
+    "path": "/api/auth/login",
+    "body": {
+      "username": "commander",
+      "password": "<SEED_PASSWORD>"
+    }
+  },
+  "response": {
+    "access_token": "<JWT, HS256, expires after JWT_EXPIRE_MINUTES>",
+    "token_type": "bearer",
+    "username": "commander",
+    "role": "commander",
+    "permissions": [
+      "evidence:read",
+      "evidence:search",
+      "simulation:run",
+      "analysis:run",
+      "risk:read",
+      "security:read",
+      "audit:read",
+      "risk:assess",
+      "agents:council",
+      "security:validate",
+      "security:red_team",
+      "approval:decide"
+    ]
+  }
+}

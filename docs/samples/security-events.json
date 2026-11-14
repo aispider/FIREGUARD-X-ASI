@@ -1,0 +1,28 @@
+{
+  "_note": "Captured from a local FIREGUARD-X backend (APP_ENV=development). The database held only SYNTHETIC/DEMO evidence; no official NASA documents were ingested.",
+  "_trimmed": false,
+  "request": {
+    "method": "GET",
+    "path": "/api/security/events?limit=3"
+  },
+  "response": [
+    {
+      "id": 2,
+      "created_at": "2026-10-12T11:11:31.670277Z",
+      "event_type": "POLICY_DENIED",
+      "severity": "HIGH",
+      "source": "agent:fire",
+      "description": "Blocked: fire requested execute:command.",
+      "status": "open"
+    },
+    {
+      "id": 1,
+      "created_at": "2026-10-12T11:11:31.611185Z",
+      "event_type": "PROMPT_INJECTION",
+      "severity": "HIGH",
+      "source": "scan-api",
+      "description": "Instruction-like text detected by the scanner.",
+      "status": "open"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "assessment_id": "fa61f16b-6437-47e6-96f2-baabcd025ebc",
+  "decision": "approve",
+  "allowed": false,
+  "reason": "Second confirmation required: send confirm=true to run the simulator.",
+  "status": "pending_approval",
+  "steps": [],
+  "audit_hash": "afdcfcd2c5a8ff20e3d626bd87b2316f6e6ae23faae96a11d18acd841b1aed69"
+}

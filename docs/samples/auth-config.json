@@ -1,0 +1,26 @@
+{
+  "demo_mode": true,
+  "demo_users": [
+    {
+      "username": "admin",
+      "role": "admin"
+    },
+    {
+      "username": "commander",
+      "role": "commander"
+    },
+    {
+      "username": "analyst",
+      "role": "analyst"
+    },
+    {
+      "username": "viewer",
+      "role": "viewer"
+    }
+  ],
+  "demo_password": "fireguard-demo",
+  "security_demo_enabled": true,
+  "evidence_mode": "demo",
+  "llm_enabled": false,
+  "embedding_provider": "hash"
+}

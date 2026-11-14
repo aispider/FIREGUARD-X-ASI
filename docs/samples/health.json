@@ -1,0 +1,10 @@
+{
+ "status": "ok",
+ "database": true,
+ "redis": true,
+ "documents": 9,
+ "official_documents": 0,
+ "chunks": 9,
+ "evidence_mode": "demo",
+ "version": "1.0.0"
+}

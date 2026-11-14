@@ -1,0 +1,123 @@
+{
+ "agents": [
+  {
+   "key": "scientist",
+   "name": "Combustion scientist",
+   "role": "COMBUSTION_SCIENTIST",
+   "grants": {
+    "read:evidence": true,
+    "read:risk": true,
+    "write:risk": false,
+    "challenge:risk": false,
+    "validate:risk": false,
+    "request:command": false,
+    "execute:command": false,
+    "admin:users": false
+   }
+  },
+  {
+   "key": "data",
+   "name": "NASA data scientist",
+   "role": "NASA_DATA",
+   "grants": {
+    "read:evidence": true,
+    "read:risk": true,
+    "write:risk": false,
+    "challenge:risk": false,
+    "validate:risk": false,
+    "request:command": false,
+    "execute:command": false,
+    "admin:users": false
+   }
+  },
+  {
+   "key": "fire",
+   "name": "Fire risk",
+   "role": "FIRE_RISK",
+   "grants": {
+    "read:evidence": true,
+    "read:risk": false,
+    "write:risk": true,
+    "challenge:risk": false,
+    "validate:risk": false,
+    "request:command": false,
+    "execute:command": false,
+    "admin:users": false
+   }
+  },
+  {
+   "key": "safety",
+   "name": "Mission safety",
+   "role": "MISSION_SAFETY",
+   "grants": {
+    "read:evidence": true,
+    "read:risk": false,
+    "write:risk": true,
+    "challenge:risk": false,
+    "validate:risk": false,
+    "request:command": false,
+    "execute:command": false,
+    "admin:users": false
+   }
+  },
+  {
+   "key": "red",
+   "name": "Adversarial red team",
+   "role": "RED_TEAM",
+   "grants": {
+    "read:evidence": true,
+    "read:risk": false,
+    "write:risk": false,
+    "challenge:risk": true,
+    "validate:risk": false,
+    "request:command": false,
+    "execute:command": false,
+    "admin:users": false
+   }
+  },
+  {
+   "key": "guardian",
+   "name": "Scientific guardian",
+   "role": "GUARDIAN",
+   "grants": {
+    "read:evidence": true,
+    "read:risk": false,
+    "write:risk": false,
+    "challenge:risk": false,
+    "validate:risk": true,
+    "request:command": false,
+    "execute:command": false,
+    "admin:users": false
+   }
+  },
+  {
+   "key": "commander",
+   "name": "Mission commander",
+   "role": "COMMANDER",
+   "grants": {
+    "read:evidence": true,
+    "read:risk": false,
+    "write:risk": false,
+    "challenge:risk": false,
+    "validate:risk": false,
+    "request:command": true,
+    "execute:command": false,
+    "admin:users": false
+   }
+  }
+ ],
+ "actions": [
+  "read:evidence",
+  "read:risk",
+  "write:risk",
+  "challenge:risk",
+  "validate:risk",
+  "request:command",
+  "execute:command",
+  "admin:users"
+ ],
+ "denied_always": [
+  "execute:command",
+  "admin:users"
+ ]
+}

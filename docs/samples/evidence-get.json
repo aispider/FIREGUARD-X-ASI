@@ -1,0 +1,39 @@
+{
+  "_note": "Captured from a local FIREGUARD-X backend (APP_ENV=development). The database held only SYNTHETIC/DEMO evidence; no official NASA documents were ingested. The '#' in the chunk ID must be URL-encoded as %23.",
+  "_trimmed": false,
+  "request": {
+    "method": "GET",
+    "path": "/api/evidence/DEMO-oxygen%23000"
+  },
+  "response": {
+    "chunk_id": "DEMO-oxygen#000",
+    "experiment": "DEMO",
+    "text": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype. Not NASA data. Qualitative statement of a modelling assumption. In the prototype model, higher oxygen concentration raises the flame spread rate and lowers the chance of extinction for solid fuels, with the effect growing faster than linearly as oxygen rises above normal cabin air. Microgravity flame behaviour is studied with oxygen concentration as a primary variable, so the model weights oxygen most heavily. Reducing oxygen concentration is the strongest single lever the model recognises for lowering flame spread.",
+    "relevance": 1.0,
+    "variables": [
+      "oxygen",
+      "extinction",
+      "flame spread"
+    ],
+    "materials": [],
+    "topic": "flame_spread",
+    "gravity": "microgravity",
+    "page": null,
+    "synthetic": true,
+    "status": "used",
+    "provenance": {
+      "document_id": "DEMO-oxygen",
+      "title": "Demo: oxygen concentration and flame spread",
+      "source": "SYNTHETIC/DEMO",
+      "source_url": null,
+      "ntrs_id": null,
+      "publication_date": null,
+      "sha256": "80d370089712cbd9351cd33280bb90b9c67ae001ae36250f8ff8317674e82cf3",
+      "retrieved_at": "2026-10-12T11:09:01.553449Z",
+      "version": "1",
+      "license": "Project-original, demo only",
+      "integrity": "verified"
+    },
+    "flags": []
+  }
+}

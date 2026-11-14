@@ -1,0 +1,234 @@
+{
+ "chain_ok": true,
+ "entries": [
+  {
+   "id": 15,
+   "ts": "2026-10-22T05:37:36Z",
+   "username": "commander",
+   "action": "auth.login",
+   "resource": "api",
+   "result": "ok",
+   "hash": "ed755ea11743266934c4f7a6eca1d2b2b7ed66939d0a17e256500ce48be007cf",
+   "prev_hash": "9f3a9132b996ea81a7e433652c21edb43dd1ab083c840ea8cee0b990c9f765ec"
+  },
+  {
+   "id": 14,
+   "ts": "2026-10-22T05:37:23Z",
+   "username": "commander",
+   "action": "security.red_team",
+   "resource": "local suite",
+   "result": "10/10 blocked",
+   "hash": "9f3a9132b996ea81a7e433652c21edb43dd1ab083c840ea8cee0b990c9f765ec",
+   "prev_hash": "d8ff8fb287263b2fe251d1e807bb25e8181eed562e547e837590bef054c30f20"
+  },
+  {
+   "id": 13,
+   "ts": "2026-10-22T05:37:23Z",
+   "username": "commander",
+   "action": "approval.approve",
+   "resource": "482ae7ab-dc1b-4605-86eb-3941aaf71864",
+   "result": "allowed",
+   "hash": "d8ff8fb287263b2fe251d1e807bb25e8181eed562e547e837590bef054c30f20",
+   "prev_hash": "5c1f83f1062abf975a3fbbcdf9803361e6199d9f60ce9fb5b5ab23f19cb5fcbe"
+  },
+  {
+   "id": 12,
+   "ts": "2026-10-22T05:37:23Z",
+   "username": "commander",
+   "action": "approval.approve",
+   "resource": "482ae7ab-dc1b-4605-86eb-3941aaf71864",
+   "result": "blocked",
+   "hash": "5c1f83f1062abf975a3fbbcdf9803361e6199d9f60ce9fb5b5ab23f19cb5fcbe",
+   "prev_hash": "059a554cdd10fc95b453a171fb97307e5dd644171864bce9478d4ab616386ec7"
+  },
+  {
+   "id": 11,
+   "ts": "2026-10-22T05:37:23Z",
+   "username": "commander",
+   "action": "risk.assess",
+   "resource": "482ae7ab-dc1b-4605-86eb-3941aaf71864",
+   "result": "HIGH/TRUSTED",
+   "hash": "059a554cdd10fc95b453a171fb97307e5dd644171864bce9478d4ab616386ec7",
+   "prev_hash": "6aed4ebb6249669417d68c39645ea311e2c3cedb445f749d70ec88ef68549c3d"
+  },
+  {
+   "id": 10,
+   "ts": "2026-10-22T05:37:23Z",
+   "username": "commander",
+   "action": "auth.login",
+   "resource": "api",
+   "result": "ok",
+   "hash": "6aed4ebb6249669417d68c39645ea311e2c3cedb445f749d70ec88ef68549c3d",
+   "prev_hash": "8bcf5b9518d627ab71466e0571dc84a91af4d3f60a7405a2f1e69c6bc80b3793"
+  },
+  {
+   "id": 9,
+   "ts": "2026-10-22T05:37:11Z",
+   "username": "system",
+   "action": "ingest.document",
+   "resource": "DEMO-suppression",
+   "result": "created",
+   "hash": "8bcf5b9518d627ab71466e0571dc84a91af4d3f60a7405a2f1e69c6bc80b3793",
+   "prev_hash": "8d5c16a49ebc8658f6c0f981b86439ffb2f3f66be06fc3116654cc3856574f75"
+  },
+  {
+   "id": 8,
+   "ts": "2026-10-22T05:37:11Z",
+   "username": "system",
+   "action": "ingest.document",
+   "resource": "DEMO-detection",
+   "result": "created",
+   "hash": "8d5c16a49ebc8658f6c0f981b86439ffb2f3f66be06fc3116654cc3856574f75",
+   "prev_hash": "7f63ab78b65f0a58754ca39db1229d5d34c2fe7a20ac24ef62fafa648238ab01"
+  },
+  {
+   "id": 7,
+   "ts": "2026-10-22T05:37:11Z",
+   "username": "system",
+   "action": "ingest.document",
+   "resource": "DEMO-gravity",
+   "result": "created",
+   "hash": "7f63ab78b65f0a58754ca39db1229d5d34c2fe7a20ac24ef62fafa648238ab01",
+   "prev_hash": "706ec4d8d72b092f03745dbe1f3f323c80e6fa9afef244ba31ae6007a0745021"
+  },
+  {
+   "id": 6,
+   "ts": "2026-10-22T05:37:11Z",
+   "username": "system",
+   "action": "ingest.document",
+   "resource": "DEMO-materials",
+   "result": "created",
+   "hash": "706ec4d8d72b092f03745dbe1f3f323c80e6fa9afef244ba31ae6007a0745021",
+   "prev_hash": "93ee4699831e943aecdbfe002354f7475c429017eb7e7334a3a4b1d8fa4aa523"
+  },
+  {
+   "id": 5,
+   "ts": "2026-10-22T05:37:11Z",
+   "username": "system",
+   "action": "ingest.document",
+   "resource": "DEMO-geometry",
+   "result": "created",
+   "hash": "93ee4699831e943aecdbfe002354f7475c429017eb7e7334a3a4b1d8fa4aa523",
+   "prev_hash": "261b4481cb167e86f79c77296bebb544544228327c32bd001b7d10e42b168a38"
+  },
+  {
+   "id": 4,
+   "ts": "2026-10-22T05:37:11Z",
+   "username": "system",
+   "action": "ingest.document",
+   "resource": "DEMO-temperature",
+   "result": "created",
+   "hash": "261b4481cb167e86f79c77296bebb544544228327c32bd001b7d10e42b168a38",
+   "prev_hash": "c3e2b664babdc2ef8b690f743bb5d969f0f64ff3be2b050d8aa9241522a821a9"
+  },
+  {
+   "id": 3,
+   "ts": "2026-10-22T05:37:11Z",
+   "username": "system",
+   "action": "ingest.document",
+   "resource": "DEMO-pressure",
+   "result": "created",
+   "hash": "c3e2b664babdc2ef8b690f743bb5d969f0f64ff3be2b050d8aa9241522a821a9",
+   "prev_hash": "b72f8aa2d73bc7a2d480d83134b92f9372918d16ceaa8943739ab24174bd0108"
+  },
+  {
+   "id": 2,
+   "ts": "2026-10-22T05:37:11Z",
+   "username": "system",
+   "action": "ingest.document",
+   "resource": "DEMO-airflow",
+   "result": "created",
+   "hash": "b72f8aa2d73bc7a2d480d83134b92f9372918d16ceaa8943739ab24174bd0108",
+   "prev_hash": "b1bc4fe1b19f77a497a993e85fc59491a80532fb2c1bd31d88088412fd41b2b2"
+  },
+  {
+   "id": 1,
+   "ts": "2026-10-22T05:37:11Z",
+   "username": "system",
+   "action": "ingest.document",
+   "resource": "DEMO-oxygen",
+   "result": "created",
+   "hash": "b1bc4fe1b19f77a497a993e85fc59491a80532fb2c1bd31d88088412fd41b2b2",
+   "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+  }
+ ],
+ "agent_runs": [
+  {
+   "agent_id": "fireguard.commander",
+   "role": "COMMANDER",
+   "version": "1.0.0",
+   "model": "rule-based-v1",
+   "input_hash": "9f32db0b4d087c6b3fefbcc98aaa9d8d9ae525702d78311995d9b59a04531d67",
+   "output_hash": "9bed16ff656592c4be67b2ae84e5d88465d34f6f1305af24f295902613c44ddb",
+   "confidence": 0.86,
+   "assessment_id": "482ae7ab-dc1b-4605-86eb-3941aaf71864",
+   "created_at": "2026-10-22T05:37:23.745859+00:00"
+  },
+  {
+   "agent_id": "fireguard.guardian",
+   "role": "GUARDIAN",
+   "version": "1.0.0",
+   "model": "rule-based-v1",
+   "input_hash": "9f32db0b4d087c6b3fefbcc98aaa9d8d9ae525702d78311995d9b59a04531d67",
+   "output_hash": "e853c323e7e228e05cfb9267d5ed306d59ec29dd875712500c65fc2c3960d84c",
+   "confidence": 0.85,
+   "assessment_id": "482ae7ab-dc1b-4605-86eb-3941aaf71864",
+   "created_at": "2026-10-22T05:37:23.745859+00:00"
+  },
+  {
+   "agent_id": "fireguard.red",
+   "role": "RED_TEAM",
+   "version": "1.0.0",
+   "model": "rule-based-v1",
+   "input_hash": "9f32db0b4d087c6b3fefbcc98aaa9d8d9ae525702d78311995d9b59a04531d67",
+   "output_hash": "922eb58bbfb9c97721c337b936ed65d9263422d610feed352c99dbf9aa6ec377",
+   "confidence": 1.0,
+   "assessment_id": "482ae7ab-dc1b-4605-86eb-3941aaf71864",
+   "created_at": "2026-10-22T05:37:23.745858+00:00"
+  },
+  {
+   "agent_id": "fireguard.safety",
+   "role": "MISSION_SAFETY",
+   "version": "1.0.0",
+   "model": "rule-based-v1",
+   "input_hash": "9f32db0b4d087c6b3fefbcc98aaa9d8d9ae525702d78311995d9b59a04531d67",
+   "output_hash": "a6505cbe2c33c806ccf3a0bc114c3a64fd8dcbc8f6225bb787a9265e1c38a223",
+   "confidence": 0.48,
+   "assessment_id": "482ae7ab-dc1b-4605-86eb-3941aaf71864",
+   "created_at": "2026-10-22T05:37:23.745858+00:00"
+  },
+  {
+   "agent_id": "fireguard.fire",
+   "role": "FIRE_RISK",
+   "version": "1.0.0",
+   "model": "rule-based-v1",
+   "input_hash": "9f32db0b4d087c6b3fefbcc98aaa9d8d9ae525702d78311995d9b59a04531d67",
+   "output_hash": "9d80fe8f53876ce56fa60e6f009fe79d1f7ae6678ef60231f84c09d4c42dbf67",
+   "confidence": 0.54,
+   "assessment_id": "482ae7ab-dc1b-4605-86eb-3941aaf71864",
+   "created_at": "2026-10-22T05:37:23.745857+00:00"
+  },
+  {
+   "agent_id": "fireguard.data",
+   "role": "NASA_DATA",
+   "version": "1.0.0",
+   "model": "rule-based-v1",
+   "input_hash": "9f32db0b4d087c6b3fefbcc98aaa9d8d9ae525702d78311995d9b59a04531d67",
+   "output_hash": "e301f8b94250c611fb870a032264b2af08d5c463f0e233426a07bc8a17797ec2",
+   "confidence": 0.75,
+   "assessment_id": "482ae7ab-dc1b-4605-86eb-3941aaf71864",
+   "created_at": "2026-10-22T05:37:23.745856+00:00"
+  },
+  {
+   "agent_id": "fireguard.scientist",
+   "role": "COMBUSTION_SCIENTIST",
+   "version": "1.0.0",
+   "model": "rule-based-v1",
+   "input_hash": "9f32db0b4d087c6b3fefbcc98aaa9d8d9ae525702d78311995d9b59a04531d67",
+   "output_hash": "95bee00553c3511df86c59a4ec4489b2e8052da7a5dedefa5b524dafdf0b1f87",
+   "confidence": 0.67,
+   "assessment_id": "482ae7ab-dc1b-4605-86eb-3941aaf71864",
+   "created_at": "2026-10-22T05:37:23.745854+00:00"
+  }
+ ]
+}

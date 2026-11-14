@@ -1,0 +1,77 @@
+{
+  "_note": "Captured from a local FIREGUARD-X backend (APP_ENV=development). The database held only SYNTHETIC/DEMO evidence; no official NASA documents were ingested.",
+  "_trimmed": "full response is 21 x 21; only the first 5 x 5 corner is kept",
+  "request": {
+    "method": "POST",
+    "path": "/api/simulation/heatmap",
+    "body": {
+      "name": null,
+      "oxygen_percent": 20.4,
+      "airflow_cm_s": 3.2,
+      "pressure_kpa": 101.0,
+      "temperature_k": 420.0,
+      "external_heating_kw_m2": 10.0,
+      "material": "PMMA",
+      "fuel_geometry": "thin_sheet",
+      "gravity": "microgravity",
+      "sensor_flags": null
+    }
+  },
+  "response": {
+    "oxygen": [
+      15.0,
+      15.5,
+      16.0,
+      16.5,
+      17.0
+    ],
+    "airflow": [
+      0.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0
+    ],
+    "scores": [
+      [
+        22.0,
+        23.0,
+        24.0,
+        26.0,
+        28.0
+      ],
+      [
+        27.0,
+        28.0,
+        30.0,
+        31.0,
+        33.0
+      ],
+      [
+        35.0,
+        36.0,
+        38.0,
+        39.0,
+        41.0
+      ],
+      [
+        41.0,
+        42.0,
+        44.0,
+        46.0,
+        47.0
+      ],
+      [
+        45.0,
+        46.0,
+        48.0,
+        49.0,
+        51.0
+      ]
+    ],
+    "current": {
+      "oxygen": 20.4,
+      "airflow": 3.2
+    }
+  }
+}

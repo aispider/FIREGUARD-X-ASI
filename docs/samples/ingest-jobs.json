@@ -1,0 +1,9 @@
+{
+  "_note": "Captured from a local FIREGUARD-X backend (APP_ENV=development). The database held only SYNTHETIC/DEMO evidence; no official NASA documents were ingested. No ingestion job had been run in this database, so the list is empty.",
+  "_trimmed": false,
+  "request": {
+    "method": "GET",
+    "path": "/api/ingest/jobs"
+  },
+  "response": []
+}

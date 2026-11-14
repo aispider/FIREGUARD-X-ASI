@@ -1,0 +1,16 @@
+{
+  "_note": "Captured from a local FIREGUARD-X backend (APP_ENV=development). The database held only SYNTHETIC/DEMO evidence; no official NASA documents were ingested.",
+  "_trimmed": false,
+  "request": {
+    "method": "POST",
+    "path": "/api/security/policy-check",
+    "body": {
+      "agent": "fire",
+      "action": "execute:command"
+    }
+  },
+  "response": {
+    "allowed": false,
+    "reason": "'execute:command' is denied to every agent. Agents advise; humans decide."
+  }
+}

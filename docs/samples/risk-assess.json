@@ -1,0 +1,21 @@
+{
+  "id": "fa61f16b-6437-47e6-96f2-baabcd025ebc",
+  "risk_level": "HIGH",
+  "risk_score": 54,
+  "confidence": 0.81,
+  "evidence_count": 8,
+  "guardian_status": "REQUIRES REVIEW",
+  "red_team_status": "CHALLENGED",
+  "trust_score": 78,
+  "status": "pending_approval",
+  "drivers": [
+    "Oxygen level",
+    "Airflow regime",
+    "Temperature"
+  ],
+  "limitations": [
+    "Prototype model. Simulated analysis only. Not NASA-approved. A human must approve every action.",
+    "The Trust Score is a prototype metric, not NASA-approved.",
+    "All evidence is SYNTHETIC/DEMO; official NASA documents have not been ingested."
+  ]
+}

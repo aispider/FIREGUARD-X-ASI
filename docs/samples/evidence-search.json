@@ -1,0 +1,251 @@
+[
+  {
+    "chunk_id": "DEMO-oxygen#000",
+    "experiment": "DEMO",
+    "text": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype. Not NASA data. Qualitative statement of a modelling assumption. In the prototype model, higher oxygen concentration raises the flame spread rate and lowers the chance of extinction for solid fuels, with the effect growing faster than linearly as oxygen rises above normal cabin air. Microgravity flame behaviour is studied with oxygen concentration as a primary variable, so the model weights oxygen most heavily. Reducing oxygen concentration is the strongest single lever the model recognises for lowering flame spread.",
+    "relevance": 1.0,
+    "variables": [
+      "oxygen",
+      "extinction",
+      "flame spread"
+    ],
+    "materials": [],
+    "topic": "flame_spread",
+    "gravity": "microgravity",
+    "page": null,
+    "synthetic": true,
+    "status": "used",
+    "provenance": {
+      "document_id": "DEMO-oxygen",
+      "title": "Demo: oxygen concentration and flame spread",
+      "source": "SYNTHETIC/DEMO",
+      "source_url": null,
+      "ntrs_id": null,
+      "publication_date": null,
+      "sha256": "80d370089712cbd9351cd33280bb90b9c67ae001ae36250f8ff8317674e82cf3",
+      "retrieved_at": "2026-10-16T05:23:31.623842Z",
+      "version": "1",
+      "license": "Project-original, demo only",
+      "integrity": "verified"
+    },
+    "flags": []
+  },
+  {
+    "chunk_id": "DEMO-pressure#000",
+    "experiment": "DEMO",
+    "text": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype. Not NASA data. Qualitative statement of a modelling assumption. Ambient pressure and oxygen fraction jointly set the oxygen partial pressure that a flame experiences. In the prototype, lower total pressure reduces the fire risk contribution, while elevated pressure increases it. Exploration spacecraft may operate at reduced pressure and elevated oxygen fraction, so both variables are tracked together.",
+    "relevance": 1.0,
+    "variables": [
+      "oxygen",
+      "pressure"
+    ],
+    "materials": [],
+    "topic": "combustion",
+    "gravity": "unspecified",
+    "page": null,
+    "synthetic": true,
+    "status": "used",
+    "provenance": {
+      "document_id": "DEMO-pressure",
+      "title": "Demo: ambient pressure and oxygen partial pressure",
+      "source": "SYNTHETIC/DEMO",
+      "source_url": null,
+      "ntrs_id": null,
+      "publication_date": null,
+      "sha256": "5a455e17787153a53e11e78b54cb6d4c9071ada4b1c33d6497dbd7dccf7ed987",
+      "retrieved_at": "2026-10-16T05:23:31.649075Z",
+      "version": "1",
+      "license": "Project-original, demo only",
+      "integrity": "verified"
+    },
+    "flags": []
+  },
+  {
+    "chunk_id": "DEMO-gravity#000",
+    "experiment": "DEMO",
+    "text": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype. Not NASA data. Qualitative statement of a modelling assumption. Without buoyancy in microgravity, flames can behave differently from the same flame on Earth, and flame spread can persist at oxygen levels where it would stop under normal gravity. The prototype applies a gravity multiplier that is highest for microgravity, lower for Martian and lunar gravity, and lowest for Earth. The size of each multiplier is an assumption.",
+    "relevance": 0.822,
+    "variables": [
+      "oxygen",
+      "flame spread"
+    ],
+    "materials": [],
+    "topic": "flame_spread",
+    "gravity": "microgravity",
+    "page": null,
+    "synthetic": true,
+    "status": "used",
+    "provenance": {
+      "document_id": "DEMO-gravity",
+      "title": "Demo: gravity level and buoyancy",
+      "source": "SYNTHETIC/DEMO",
+      "source_url": null,
+      "ntrs_id": null,
+      "publication_date": null,
+      "sha256": "22380e01f600a946f392cd2abefad54f3c92c4412a5aab5c18419a4faacaf737",
+      "retrieved_at": "2026-10-16T05:23:31.677035Z",
+      "version": "1",
+      "license": "Project-original, demo only",
+      "integrity": "verified"
+    },
+    "flags": []
+  },
+  {
+    "chunk_id": "DEMO-temperature#000",
+    "experiment": "DEMO",
+    "text": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype. Not NASA data. Qualitative statement of a modelling assumption. Higher ambient temperature and external radiant heating bring a solid fuel closer to ignition and speed up flame spread. In the prototype model they contribute less than oxygen and airflow, but external heating from a hot surface or failed electronics can move a marginal scenario into a higher risk band. This is a qualitative assumption for demonstration.",
+    "relevance": 0.769,
+    "variables": [
+      "oxygen",
+      "airflow",
+      "temperature",
+      "heating",
+      "flame spread",
+      "ignition"
+    ],
+    "materials": [],
+    "topic": "flame_spread",
+    "gravity": "unspecified",
+    "page": null,
+    "synthetic": true,
+    "status": "used",
+    "provenance": {
+      "document_id": "DEMO-temperature",
+      "title": "Demo: ambient temperature and external heating",
+      "source": "SYNTHETIC/DEMO",
+      "source_url": null,
+      "ntrs_id": null,
+      "publication_date": null,
+      "sha256": "3f05c63106ad3b6cf998e94d0fb761e364e12b0dda9a6054056905d9b894eccb",
+      "retrieved_at": "2026-10-16T05:23:31.655846Z",
+      "version": "1",
+      "license": "Project-original, demo only",
+      "integrity": "verified"
+    },
+    "flags": []
+  },
+  {
+    "chunk_id": "DEMO-materials#000",
+    "experiment": "DEMO",
+    "text": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype. Not NASA data. Qualitative statement of a modelling assumption. The prototype includes PMMA, a cotton-fiberglass fabric, polyethylene, silicone and Nomex fabric as example fuels. Fabrics burn readily as thin sheets in the model, polyethylene and PMMA are treated as moderately to highly flammable solids, silicone as less flammable, and Nomex fabric as the most fire resistant. These relative rankings are assumptions used to drive the demonstration and are not test results.",
+    "relevance": 0.706,
+    "variables": [
+      "geometry",
+      "flammability"
+    ],
+    "materials": [
+      "PMMA",
+      "Cotton-fiberglass fabric",
+      "Polyethylene",
+      "Silicone",
+      "Nomex fabric"
+    ],
+    "topic": "flammability",
+    "gravity": "unspecified",
+    "page": null,
+    "synthetic": true,
+    "status": "used",
+    "provenance": {
+      "document_id": "DEMO-materials",
+      "title": "Demo: material classes used in the prototype",
+      "source": "SYNTHETIC/DEMO",
+      "source_url": null,
+      "ntrs_id": null,
+      "publication_date": null,
+      "sha256": "6f71a8b3f9dd98ff982ba01f073300a361225dd8cb1def9189cf68286524ec74",
+      "retrieved_at": "2026-10-16T05:23:31.669519Z",
+      "version": "1",
+      "license": "Project-original, demo only",
+      "integrity": "verified"
+    },
+    "flags": []
+  },
+  {
+    "chunk_id": "DEMO-airflow#000",
+    "experiment": "DEMO",
+    "text": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype. Not NASA data. Qualitative statement of a modelling assumption. The prototype treats airflow nonlinearly. At very low ventilation flow, oxygen supply limits a flame, so it spreads slowly or extinguishes. At moderate flow in microgravity the supply of oxygen to the flame improves and spread can peak. At high flow, convective heat loss and blow-off tendencies reduce spread. This produces a flow velocity of greatest concern in the low tens of centimetres per second. The exact peak location here is a modelling assumption, not a measured value.",
+    "relevance": 0.579,
+    "variables": [
+      "oxygen",
+      "airflow",
+      "extinction"
+    ],
+    "materials": [],
+    "topic": "extinction",
+    "gravity": "microgravity",
+    "page": null,
+    "synthetic": true,
+    "status": "used",
+    "provenance": {
+      "document_id": "DEMO-airflow",
+      "title": "Demo: airflow and the opposed-flow regime",
+      "source": "SYNTHETIC/DEMO",
+      "source_url": null,
+      "ntrs_id": null,
+      "publication_date": null,
+      "sha256": "66bfe9f2311c011089e23b3909e63921d3fc9ebfcab67460041b5a7966067503",
+      "retrieved_at": "2026-10-16T05:23:31.641316Z",
+      "version": "1",
+      "license": "Project-original, demo only",
+      "integrity": "verified"
+    },
+    "flags": []
+  },
+  {
+    "chunk_id": "DEMO-geometry#000",
+    "experiment": "DEMO",
+    "text": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype. Not NASA data. Qualitative statement of a modelling assumption. Thin sheet fuels such as fabrics and thin films heat up quickly and sustain flame spread more readily than thick slabs. Cylindrical samples fall in between. The prototype applies a larger multiplier to thin sheet geometry and a smaller one to thick slab geometry. Sample thickness and geometry are recorded in combustion experiments because they change flame spread.",
+    "relevance": 0.561,
+    "variables": [
+      "geometry",
+      "flame spread"
+    ],
+    "materials": [],
+    "topic": "flame_spread",
+    "gravity": "unspecified",
+    "page": null,
+    "synthetic": true,
+    "status": "used",
+    "provenance": {
+      "document_id": "DEMO-geometry",
+      "title": "Demo: fuel geometry and thickness",
+      "source": "SYNTHETIC/DEMO",
+      "source_url": null,
+      "ntrs_id": null,
+      "publication_date": null,
+      "sha256": "baf8c2f13c2a7b922bc8fcc60cc8ae7f032faaa60e5dfab809d4f3c317f5f285",
+      "retrieved_at": "2026-10-16T05:23:31.662383Z",
+      "version": "1",
+      "license": "Project-original, demo only",
+      "integrity": "verified"
+    },
+    "flags": []
+  },
+  {
+    "chunk_id": "DEMO-detection#000",
+    "experiment": "DEMO",
+    "text": "SYNTHETIC/DEMO passage written for the FIREGUARD-X prototype. Not NASA data. Qualitative statement of a modelling assumption. A single smoke detector or flame sensor can be wrong and cause a false alarm or a missed alarm. The prototype raises confidence when independent sensors agree and lowers it when only one sensor reports or sensors disagree. Missing sensor data is treated as uncertainty, not as proof that no fire exists. Recommendations for a critical fire scenario always need human review in this prototype.",
+    "relevance": 0.0,
+    "variables": [],
+    "materials": [],
+    "topic": "combustion",
+    "gravity": "unspecified",
+    "page": null,
+    "synthetic": true,
+    "status": "used",
+    "provenance": {
+      "document_id": "DEMO-detection",
+      "title": "Demo: sensor corroboration and false alarms",
+      "source": "SYNTHETIC/DEMO",
+      "source_url": null,
+      "ntrs_id": null,
+      "publication_date": null,
+      "sha256": "bc71d521a9c47e6c5338d13aed95e461ae9505b7aae5cab08d3a6873c5c1b88f",
+      "retrieved_at": "2026-10-16T05:23:31.683172Z",
+      "version": "1",
+      "license": "Project-original, demo only",
+      "integrity": "verified"
+    },
+    "flags": []
+  }
+]

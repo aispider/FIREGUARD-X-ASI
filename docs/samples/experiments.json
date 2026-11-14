@@ -1,0 +1,90 @@
+[
+ {
+  "key": "BASS-II",
+  "name": "Burning and Suppression of Solids II",
+  "program": "NASA ISS microgravity combustion",
+  "description": "ISS investigation of flame spread, extinction and suppression on solid fuels in microgravity.",
+  "source_url": "https://www.nasa.gov/mission_pages/station/research/news/bassII",
+  "variables": [
+   "oxygen",
+   "airflow",
+   "pressure",
+   "geometry"
+  ],
+  "documents": 0,
+  "chunks": 0,
+  "official_documents": 0
+ },
+ {
+  "key": "SoFIE",
+  "name": "Solid Fuel Ignition and Extinction",
+  "program": "NASA ISS microgravity combustion",
+  "description": "ISS combustion investigation of ignition and extinction of solid fuels in the Combustion Integrated Rack.",
+  "source_url": null,
+  "variables": [
+   "oxygen",
+   "airflow",
+   "pressure",
+   "temperature"
+  ],
+  "documents": 0,
+  "chunks": 0,
+  "official_documents": 0
+ },
+ {
+  "key": "ACME",
+  "name": "Advanced Combustion via Microgravity Experiments",
+  "program": "NASA ISS microgravity combustion",
+  "description": "ISS combustion investigations of gas-jet flames and related phenomena in microgravity.",
+  "source_url": null,
+  "variables": [
+   "oxygen",
+   "pressure"
+  ],
+  "documents": 0,
+  "chunks": 0,
+  "official_documents": 0
+ },
+ {
+  "key": "Saffire",
+  "name": "Spacecraft Fire Experiment (Saffire)",
+  "program": "NASA spacecraft fire safety",
+  "description": "Large-scale spacecraft fire experiments flown on uncrewed resupply vehicles.",
+  "source_url": null,
+  "variables": [
+   "oxygen",
+   "airflow",
+   "geometry",
+   "heating"
+  ],
+  "documents": 0,
+  "chunks": 0,
+  "official_documents": 0
+ },
+ {
+  "key": "SFS",
+  "name": "Spacecraft fire safety (general)",
+  "program": "NASA spacecraft fire safety",
+  "description": "NASA material flammability, fire detection and suppression literature for crewed spacecraft.",
+  "source_url": null,
+  "variables": [
+   "oxygen",
+   "pressure",
+   "airflow"
+  ],
+  "documents": 0,
+  "chunks": 0,
+  "official_documents": 0
+ },
+ {
+  "key": "DEMO",
+  "name": "Synthetic demonstration evidence",
+  "program": "SYNTHETIC/DEMO",
+  "description": "Offline demonstration passages written for this prototype. Not NASA data.",
+  "source_url": null,
+  "variables": [],
+  "documents": 9,
+  "chunks": 9,
+  "official_documents": 0
+ }
+]

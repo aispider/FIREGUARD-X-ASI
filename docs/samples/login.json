@@ -1,0 +1,20 @@
+{
+ "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjb21tYW5kZXIiLCJyb2xlIjoiY29tbWFuZGVyIiwiaWF0IjoxNzkyNjQ3NDU2LCJleHAiOjE3OTI2NzYyNTZ9.NXLYg3CQcPzJ1otKz1mAcVF7N3WYPMNSWPIOMMXyvJ4",
+ "token_type": "bearer",
+ "username": "commander",
+ "role": "commander",
+ "permissions": [
+  "evidence:read",
+  "evidence:search",
+  "simulation:run",
+  "analysis:run",
+  "risk:read",
+  "security:read",
+  "audit:read",
+  "risk:assess",
+  "agents:council",
+  "security:validate",
+  "security:red_team",
+  "approval:decide"
+ ]
+}

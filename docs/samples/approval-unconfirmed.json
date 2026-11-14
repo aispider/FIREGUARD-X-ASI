@@ -1,0 +1,23 @@
+{
+  "_note": "Captured from a local FIREGUARD-X backend (APP_ENV=development). The database held only SYNTHETIC/DEMO evidence; no official NASA documents were ingested.",
+  "_trimmed": false,
+  "request": {
+    "method": "POST",
+    "path": "/api/approvals",
+    "body": {
+      "assessment_id": "5a4ae08e-873d-4ad7-9db7-23dec37b3f90",
+      "decision": "approve",
+      "note": "Reviewed",
+      "confirm": false
+    }
+  },
+  "response": {
+    "assessment_id": "5a4ae08e-873d-4ad7-9db7-23dec37b3f90",
+    "decision": "approve",
+    "allowed": false,
+    "reason": "Second confirmation required: send confirm=true to run the simulator.",
+    "status": "pending_approval",
+    "steps": [],
+    "audit_hash": "f5958f68692eed7f9aace19a20677629db6442581117853066b066546c0f4ba4"
+  }
+}

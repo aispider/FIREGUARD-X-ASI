@@ -1,0 +1,47 @@
+[
+ {
+  "id": 5,
+  "created_at": "2026-10-21T05:35:45.672845Z",
+  "event_type": "INTEGRITY_FAIL",
+  "severity": "HIGH",
+  "source": "data-guard",
+  "description": "DEMO-oxygen failed its SHA-256 integrity check and was quarantined.",
+  "status": "open"
+ },
+ {
+  "id": 4,
+  "created_at": "2026-10-21T05:35:45.615552Z",
+  "event_type": "PROMPT_INJECTION",
+  "severity": "HIGH",
+  "source": "DEMO-attack-1",
+  "description": "Instruction-like text in retrieved evidence was excluded.",
+  "status": "open"
+ },
+ {
+  "id": 3,
+  "created_at": "2026-10-21T05:35:35.114338Z",
+  "event_type": "POLICY_DENIED",
+  "severity": "MEDIUM",
+  "source": "agent:fire",
+  "description": "'execute:command' is denied to every agent. Agents advise; humans decide.",
+  "status": "open"
+ },
+ {
+  "id": 2,
+  "created_at": "2026-10-21T05:35:34.932487Z",
+  "event_type": "APPROVAL_BLOCKED",
+  "severity": "MEDIUM",
+  "source": "commander",
+  "description": "Second confirmation required: send confirm=true to run the simulator.",
+  "status": "open"
+ },
+ {
+  "id": 1,
+  "created_at": "2026-10-21T05:35:34.916390Z",
+  "event_type": "APPROVAL_BLOCKED",
+  "severity": "MEDIUM",
+  "source": "viewer",
+  "description": "Your role cannot approve actions.",
+  "status": "open"
+ }
+]

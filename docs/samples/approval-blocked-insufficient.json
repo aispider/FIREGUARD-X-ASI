@@ -1,0 +1,23 @@
+{
+  "_note": "Captured from a local FIREGUARD-X backend (APP_ENV=development). The database held only SYNTHETIC/DEMO evidence; no official NASA documents were ingested.",
+  "_trimmed": false,
+  "request": {
+    "method": "POST",
+    "path": "/api/approvals",
+    "body": {
+      "assessment_id": "350d7a5f-44a4-45e9-b800-efc11d7505a6",
+      "decision": "approve",
+      "confirm": true
+    },
+    "server_setting": "EVIDENCE_MODE=strict"
+  },
+  "response": {
+    "assessment_id": "350d7a5f-44a4-45e9-b800-efc11d7505a6",
+    "decision": "approve",
+    "allowed": false,
+    "reason": "INSUFFICIENT EVIDENCE — HUMAN REVIEW REQUIRED. Approval is blocked until evidence improves.",
+    "status": "insufficient_evidence",
+    "steps": [],
+    "audit_hash": "a6841c385e625f1823697896dfc77ff9ff381a8834f22c5c69f8c01a4ff1048c"
+  }
+}

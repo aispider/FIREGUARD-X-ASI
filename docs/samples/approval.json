@@ -1,0 +1,54 @@
+{
+  "_note": "Captured from a local FIREGUARD-X backend (APP_ENV=development). The database held only SYNTHETIC/DEMO evidence; no official NASA documents were ingested.",
+  "_trimmed": false,
+  "request": {
+    "method": "POST",
+    "path": "/api/approvals",
+    "body": {
+      "assessment_id": "5a4ae08e-873d-4ad7-9db7-23dec37b3f90",
+      "decision": "approve",
+      "note": "Reviewed",
+      "confirm": true
+    }
+  },
+  "response": {
+    "assessment_id": "5a4ae08e-873d-4ad7-9db7-23dec37b3f90",
+    "decision": "approve",
+    "allowed": true,
+    "reason": "Approved by a human. The command simulator will run; nothing is sent to any spacecraft. Guardian status is REQUIRES REVIEW; your approval is recorded as a human override.",
+    "status": "approved_simulated",
+    "steps": [
+      {
+        "index": 1,
+        "title": "Isolate affected module",
+        "detail": "[SIMULATED] Close hatches and shut the module ventilation loop.",
+        "risk_after": 45.0
+      },
+      {
+        "index": 2,
+        "title": "Reduce airflow",
+        "detail": "[SIMULATED] Lower flow and verify the flame response.",
+        "risk_after": 36.0
+      },
+      {
+        "index": 3,
+        "title": "Prepare suppression",
+        "detail": "[SIMULATED] Arm the agent and pre-position the crew.",
+        "risk_after": 28.0
+      },
+      {
+        "index": 4,
+        "title": "Continue monitoring",
+        "detail": "[SIMULATED] Track flame growth and module temperature.",
+        "risk_after": 19.0
+      },
+      {
+        "index": 5,
+        "title": "Re-evaluate after 30 seconds",
+        "detail": "[SIMULATED] Council re-runs with fresh sensor data.",
+        "risk_after": 10.0
+      }
+    ],
+    "audit_hash": "5dad6407eec06f450b1c922e44f9e864fad3055ff4549e6824c9b1885fea0f4a"
+  }
+}

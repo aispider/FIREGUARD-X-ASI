@@ -1,0 +1,92 @@
+[
+ {
+  "key": "day183",
+  "name": "Mission Day 183",
+  "scenario": {
+   "name": "Mission Day 183",
+   "oxygen_percent": 20.4,
+   "airflow_cm_s": 3.2,
+   "pressure_kpa": 101.0,
+   "temperature_k": 420.0,
+   "external_heating_kw_m2": 10.0,
+   "material": "PMMA",
+   "fuel_geometry": "thin_sheet",
+   "gravity": "microgravity",
+   "sensor_flags": null
+  },
+  "synthetic": true,
+  "note": "SYNTHETIC/DEMO scenario, not a NASA record."
+ },
+ {
+  "key": "nominal",
+  "name": "Nominal cabin",
+  "scenario": {
+   "name": "Nominal cabin",
+   "oxygen_percent": 20.9,
+   "airflow_cm_s": 1.0,
+   "pressure_kpa": 101.0,
+   "temperature_k": 295.0,
+   "external_heating_kw_m2": 0.0,
+   "material": "Nomex fabric",
+   "fuel_geometry": "thick_slab",
+   "gravity": "microgravity",
+   "sensor_flags": null
+  },
+  "synthetic": true,
+  "note": "SYNTHETIC/DEMO scenario, not a NASA record."
+ },
+ {
+  "key": "o2leak",
+  "name": "O2-enriched leak",
+  "scenario": {
+   "name": "O2-enriched leak",
+   "oxygen_percent": 24.5,
+   "airflow_cm_s": 5.0,
+   "pressure_kpa": 101.0,
+   "temperature_k": 450.0,
+   "external_heating_kw_m2": 5.0,
+   "material": "Cotton-fiberglass fabric",
+   "fuel_geometry": "thin_sheet",
+   "gravity": "microgravity",
+   "sensor_flags": null
+  },
+  "synthetic": true,
+  "note": "SYNTHETIC/DEMO scenario, not a NASA record."
+ },
+ {
+  "key": "blowoff",
+  "name": "High-flow blow-off",
+  "scenario": {
+   "name": "High-flow blow-off",
+   "oxygen_percent": 21.0,
+   "airflow_cm_s": 38.0,
+   "pressure_kpa": 101.0,
+   "temperature_k": 420.0,
+   "external_heating_kw_m2": 0.0,
+   "material": "PMMA",
+   "fuel_geometry": "thick_slab",
+   "gravity": "microgravity",
+   "sensor_flags": null
+  },
+  "synthetic": true,
+  "note": "SYNTHETIC/DEMO scenario, not a NASA record."
+ },
+ {
+  "key": "beyond",
+  "name": "Beyond tested range",
+  "scenario": {
+   "name": "Beyond tested range",
+   "oxygen_percent": 24.8,
+   "airflow_cm_s": 5.0,
+   "pressure_kpa": 140.0,
+   "temperature_k": 590.0,
+   "external_heating_kw_m2": 25.0,
+   "material": "Silicone",
+   "fuel_geometry": "cylinder",
+   "gravity": "microgravity",
+   "sensor_flags": null
+  },
+  "synthetic": true,
+  "note": "SYNTHETIC/DEMO scenario, not a NASA record."
+ }
+]
